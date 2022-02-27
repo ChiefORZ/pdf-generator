@@ -117,6 +117,7 @@ const pdfGenerator = async (args: IArgs) => {
         await canvasToImageElement.$eval(
           '*',
           (element, base64) => {
+            // @ts-ignore ts(2339)
             element.style.display = 'none';
             element.outerHTML = `<img src="data:image/png;base64, ${base64}" />`;
           },

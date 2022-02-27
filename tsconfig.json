@@ -3,7 +3,7 @@
     "declaration": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "lib": ["esnext"],
+    "lib": ["dom", "esnext"],
     "module": "commonjs",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false,
