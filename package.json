@@ -46,7 +46,8 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "dev": "ts-node-dev ./bin/pdf-generator",
-    "test": "yarn build && echo \"Testing\" || TRUE"
+    "postinstall": "yarn build",
+    "test": "echo \"Testing\" || TRUE"
   },
   "types": "lib/index.d.ts",
   "version": "1.0.0"
