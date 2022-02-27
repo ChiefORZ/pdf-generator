@@ -1,0 +1,65 @@
+// @ts-check
+module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'import'],
+  env: {
+    node: true,
+    es6: true,
+  },
+  ignorePatterns: ['.eslintrc.js'],
+  extends: ['eslint:recommended', 'plugin:eslint-comments/recommended'],
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    project: ['./tsconfig.json'],
+    // debugLevel: true,
+  },
+  overrides: [
+    {
+      files: ['*.ts'],
+      extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:prettier/recommended'
+      ],
+      rules: {
+        '@typescript-eslint/ban-ts-comment': 'off',
+        '@typescript-eslint/ban-types': 'off',
+        '@typescript-eslint/consistent-type-imports': 'error',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/no-empty-interface': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-misused-promises': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+        '@typescript-eslint/no-unsafe-argument': 'warn',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
+        '@typescript-eslint/no-use-before-define': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/restrict-plus-operands': 'off',
+        '@typescript-eslint/restrict-template-expressions': 'off',
+        'eslint-comments/disable-enable-pair': 'error',
+        'eslint-comments/no-aggregating-enable': 'error',
+        'eslint-comments/no-duplicate-disable': 'error',
+        'eslint-comments/no-unlimited-disable': 'error',
+        'eslint-comments/no-unused-disable': 'error',
+        'eslint-comments/no-unused-enable': 'error',
+        'import/first': 'error',
+        'import/newline-after-import': 'error',
+        'import/no-duplicates': 'error',
+        'no-empty': 'off',
+        'no-useless-escape': 'off',
+        'prettier/prettier': 'warn',
+        'simple-import-sort/exports': 'error',
+        'simple-import-sort/imports': 'error'
+      },
+    },
+  ]
+}
