@@ -1,4 +1,4 @@
-name: Test
+name: Test and Publish
 
 on: [push, pull_request]
 
@@ -21,21 +21,19 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Build package
+        run: yarn build
+
       - name: Test
         run: yarn test
 
-      - name: Publish
-        uses: JS-DevTools/npm-publish@v1
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-
   todo-to-issue:
     needs: build-and-test
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
+      
       - name: TODO to Issue
         uses: alstr/todo-to-issue-action@v1.3-beta
         with:
@@ -46,3 +44,29 @@ jobs:
           LABEL: "// TODO"
           COMMENT_MARKER: "//"
         id: todo
+
+  publish:
+    needs: todo-to-issue
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - uses: c-hive/gha-yarn-cache@v2
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build package
+        run: yarn build
+
+      - name: Publish
+        uses: JS-DevTools/npm-publish@v1
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
