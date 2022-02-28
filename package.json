@@ -1,6 +1,6 @@
 {
   "author": "ChiefORZ <seb.schaffernak@gmail.com>",
-  "bin": "./dist/bin/pdf-generator.js",
+  "bin": "dist/bin/pdf-generator.js",
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",
     "debug": "^4.3.3",
@@ -39,7 +39,7 @@
     "ts-node-dev": "^1.1.8"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "name": "@chieforz/pdf-generator",
   "packageManager": "yarn@3.2.0",
   "publishConfig": {
@@ -52,6 +52,6 @@
     "dev": "ts-node-dev ./bin/pdf-generator",
     "test": "echo \"Testing\" || TRUE"
   },
-  "types": "lib/index.d.ts",
-  "version": "1.0.0"
+  "types": "dist/src/index.d.ts",
+  "version": "1.0.1"
 }

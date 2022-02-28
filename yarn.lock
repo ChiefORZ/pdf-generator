@@ -70,7 +70,7 @@ __metadata:
     typescript: ^4.5.5
     yargs: ^17.3.1
   bin:
-    pdf-generator: ./dist/bin/pdf-generator.js
+    pdf-generator: dist/bin/pdf-generator.js
   languageName: unknown
   linkType: soft
 
