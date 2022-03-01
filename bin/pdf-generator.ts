@@ -36,7 +36,6 @@ void (async () => {
       })
       .epilogue(epilogue)
       .parseSync();
-    console.log('args ', args);
 
     const res = await pdfGenerator({
       chromeExecutable: args.chrome as string,

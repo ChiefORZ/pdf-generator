@@ -51,7 +51,6 @@ interface IArgs {
 }
 
 const pdfGenerator = async (args: IArgs) => {
-  console.log('args ', args);
   if (!args.chromeExecutable) {
     throw new Error('A executable path to an chromium instance is needed.');
   }
