@@ -1,5 +1,11 @@
 undefined
 
+### [1.1.1](https://github.com/ChiefORZ/pdf-generator/compare/1.1.0...1.1.1) (2022-03-01)
+
+### Bug Fixes
+
+- url regExp was not picked up ([dfdd914](https://github.com/ChiefORZ/pdf-generator/commit/dfdd91443fd8341c8e58cca1d17916e7a0109d67))undefined
+
 ## 1.1.0 (2022-02-28)
 
 ### Features
