@@ -1,5 +1,3 @@
-undefined
-
 ### [1.1.1](https://github.com/ChiefORZ/pdf-generator/compare/1.1.0...1.1.1) (2022-03-01)
 
 ### Bug Fixes
