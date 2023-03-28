@@ -4,7 +4,7 @@ specifiers:
   '@commitlint/cli': ^17.0.0
   '@commitlint/config-conventional': ^17.0.0
   '@pdf-lib/fontkit': ^1.1.1
-  '@release-it/conventional-changelog': ^4.2.0
+  '@release-it/conventional-changelog': ^5.0.0
   '@types/conventional-changelog': ^3
   '@types/debug': ^4
   '@types/eslint': ^8
@@ -59,7 +59,7 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 17.5.0
   '@commitlint/config-conventional': 17.4.4
-  '@release-it/conventional-changelog': 4.2.0_release-it@14.12.5
+  '@release-it/conventional-changelog': 5.1.1_release-it@14.12.5
   '@types/conventional-changelog': 3.1.1
   '@types/debug': 4.1.7
   '@types/eslint': 8.4.1
@@ -506,17 +506,17 @@ packages:
       pako: 1.0.11
     dev: false
 
-  /@release-it/conventional-changelog/4.2.0_release-it@14.12.5:
-    resolution: {integrity: sha512-o0XF8HyrUJ7u0bqXbGfq0M87pzK9cZ1ybBwDywZvV37EB1JRUJjpw1yQRcOe1gpaeOOplucb0BXj9SKuNQGBcw==}
-    engines: {node: '>=10'}
+  /@release-it/conventional-changelog/5.1.1_release-it@14.12.5:
+    resolution: {integrity: sha512-QtbDBe36dQfzexAfDYrbLPvd5Cb5bMWmLcjcGhCOWBss7fe1/gCjoxDULVz+7N7G5Nu2UMeBwHcUp/w8RDh5VQ==}
+    engines: {node: '>=14'}
     peerDependencies:
-      release-it: ^14.12.1
+      release-it: ^15.4.1
     dependencies:
       concat-stream: 2.0.0
       conventional-changelog: 3.1.25
       conventional-recommended-bump: 6.1.0
-      prepend-file: 2.0.1
       release-it: 14.12.5
+      semver: 7.3.8
     dev: true
 
   /@sindresorhus/is/0.14.0:
@@ -875,7 +875,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.3.5
+      semver: 7.3.8
       tsutils: 3.21.0_typescript@4.5.5
       typescript: 4.5.5
     transitivePeerDependencies:
@@ -4011,13 +4011,6 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prepend-file/2.0.1:
-    resolution: {integrity: sha512-0hXWjmOpz5YBIk6xujS0lYtCw6IAA0wCR3fw49UGTLc3E9BIhcxgqdMa8rzGvrtt2F8wFiGP42oEpQ8fo9zhRw==}
-    engines: {node: ^10.17 || >=11.14}
-    dependencies:
-      temp-write: 4.0.0
-    dev: true
-
   /prepend-http/2.0.0:
     resolution: {integrity: sha512-ravE6m9Atw9Z/jjttRUZ+clIXogdghyZAuWJ3qEzjT+jI/dL1ifAqhZeC5VHzQp1MSt1+jxKkFNemj/iO7tVUA==}
     engines: {node: '>=4'}
@@ -4776,22 +4769,6 @@ packages:
       readable-stream: 3.6.0
     dev: false
 
-  /temp-dir/1.0.0:
-    resolution: {integrity: sha512-xZFXEGbG7SNC3itwBzI3RYjq/cEhBkx2hJuKGIUOcEULmkQExXiHat2z/qkISYsuR+IKumhEfKKbV5qXmhICFQ==}
-    engines: {node: '>=4'}
-    dev: true
-
-  /temp-write/4.0.0:
-    resolution: {integrity: sha512-HIeWmj77uOOHb0QX7siN3OtwV3CTntquin6TNVg6SHOqCP3hYKmox90eeFOGaY1MqJ9WYDDjkyZrW6qS5AWpbw==}
-    engines: {node: '>=8'}
-    dependencies:
-      graceful-fs: 4.2.9
-      is-stream: 2.0.1
-      make-dir: 3.1.0
-      temp-dir: 1.0.0
-      uuid: 3.4.0
-    dev: true
-
   /text-extensions/1.9.0:
     resolution: {integrity: sha512-wiBrwC1EhBelW12Zy26JeOUkQ5mRu+5o8rpsJk5+2t+Y5vE7e842qtZDQ2g1NpX/29HdyFeJ4nSIhI47ENSxlQ==}
     engines: {node: '>=0.10'}
@@ -5145,12 +5122,6 @@ packages:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
     dev: false
-
-  /uuid/3.4.0:
-    resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
-    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
-    hasBin: true
-    dev: true
 
   /uuid/8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
