@@ -127,6 +127,7 @@ const pdfGenerator = async (args: IArgs) => {
     await Promise.all(canvasToImagePromises);
   }
 
+  // @ts-ignore
   const pdfContent = await report.pdfPage(page, pdfOptions);
 
   await browser.close();
