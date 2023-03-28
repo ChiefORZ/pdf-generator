@@ -28,7 +28,7 @@ specifiers:
   eslint-plugin-simple-import-sort: ^10.0.0
   express: ^4.17.3
   fast-glob: ^3.2.11
-  husky: ^7.0.4
+  husky: ^8.0.0
   is-ci: ^3.0.1
   lint-staged: ^13.0.0
   pdf-lib: ^1.17.1
@@ -80,7 +80,7 @@ devDependencies:
   eslint-plugin-import: 2.25.4_ndy7cl5q5jh5koiilcu3pvyl4e
   eslint-plugin-prettier: 4.0.0_ojrntbqjhgbveccev2vshjidgi
   eslint-plugin-simple-import-sort: 10.0.0_eslint@8.36.0
-  husky: 7.0.4
+  husky: 8.0.3
   is-ci: 3.0.1
   lint-staged: 13.2.0
   prettier: 2.5.1
@@ -2835,9 +2835,9 @@ packages:
     engines: {node: '>=14.18.0'}
     dev: true
 
-  /husky/7.0.4:
-    resolution: {integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==}
-    engines: {node: '>=12'}
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
