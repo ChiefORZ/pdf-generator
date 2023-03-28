@@ -7,25 +7,30 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x, 17.x]
+        node-version: [18.x]
     steps:
-      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.28.0
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M')"
+
+      - uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
-      - uses: c-hive/gha-yarn-cache@v2
-
       - name: Install dependencies
-        run: yarn
+        run: pnpm i --frozen-lockfile
 
-      - name: Build package
-        run: yarn build
+      - name: Build
+        run: pnpm run build
 
       - name: Test
-        run: yarn test
+        run: pnpm run test
 
   todo-to-issue:
     needs: build-and-test
