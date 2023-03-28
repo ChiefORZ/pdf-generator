@@ -57,7 +57,6 @@
   },
   "main": "dist/src/index.js",
   "name": "@chieforz/pdf-generator",
-  "packageManager": "yarn@3.2.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
