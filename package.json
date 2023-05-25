@@ -8,7 +8,7 @@
     "fast-glob": "^3.2.11",
     "pdf-lib": "^1.17.1",
     "puppeteer-chromium-resolver": "^20.0.0",
-    "puppeteer-core": "^19.0.0",
+    "puppeteer-core": "^20.0.0",
     "puppeteer-report": "^3.0.1",
     "rimraf": "^5.0.0",
     "typescript": "^5.0.0",
