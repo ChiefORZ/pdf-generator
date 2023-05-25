@@ -32,6 +32,7 @@ void (async () => {
           type: 'string',
           describe:
             'The path to the chromium executable that will be used by puppeteer',
+          optional: true,
         },
       })
       .epilogue(epilogue)

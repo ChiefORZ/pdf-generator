@@ -8,6 +8,7 @@ import { lstat, mkdir } from 'fs/promises';
 import type { Server } from 'http';
 import path from 'path';
 import { PDFDocument } from 'pdf-lib';
+import PCR from 'puppeteer-chromium-resolver';
 import type { PaperFormat } from 'puppeteer-core';
 import puppeteer from 'puppeteer-core';
 import report from 'puppeteer-report';
@@ -51,10 +52,6 @@ interface IArgs {
 }
 
 const pdfGenerator = async (args: IArgs) => {
-  if (!args.chromeExecutable) {
-    throw new Error('A executable path to an chromium instance is needed.');
-  }
-
   if (!args.input) {
     throw new Error(
       'A valid input is needed, provide either a URL or a Path to a static website.'
@@ -90,9 +87,16 @@ const pdfGenerator = async (args: IArgs) => {
     url = `http://127.0.0.1:${port}`;
   }
 
-  debug('Launching chrome browser at', args.chromeExecutable);
+  let chromeExecutable = args.chromeExecutable;
+
+  if (!chromeExecutable) {
+    const pcr = await PCR();
+    chromeExecutable = await pcr.executablePath;
+  }
+
+  debug('Launching chrome browser at', chromeExecutable);
   const browser = await puppeteer.launch({
-    executablePath: args.chromeExecutable,
+    executablePath: chromeExecutable,
     headless: true,
   });
 
