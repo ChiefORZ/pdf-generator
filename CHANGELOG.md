@@ -1,3 +1,9 @@
+## 1.2.0 (2023-05-25)
+
+### Features
+
+- make parameter chrome optional ([14033fa](https://github.com/ChiefORZ/pdf-generator/commit/14033fa81248bbd63cd085ebfdd796e199805ea8))
+
 ### [1.1.1](https://github.com/ChiefORZ/pdf-generator/compare/1.1.0...1.1.1) (2022-03-01)
 
 ### Bug Fixes
