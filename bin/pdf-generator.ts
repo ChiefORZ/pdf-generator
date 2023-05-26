@@ -34,6 +34,13 @@ void (async () => {
             'The path to the chromium executable that will be used by puppeteer',
           optional: true,
         },
+        'puppeteer-args': {
+          alias: 'p',
+          type: 'array',
+          describe:
+            'Additional command line arguments to pass to the browser instance.',
+          optional: true,
+        },
       })
       .epilogue(epilogue)
       .parseSync();
