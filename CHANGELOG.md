@@ -1,3 +1,9 @@
+## 1.3.1 (2023-05-26)
+
+### Bug Fixes
+
+- incorrect version numbering ([d5e5c72](https://github.com/ChiefORZ/pdf-generator/commit/d5e5c72b81d245a2874c50da545d3cfc93c6219e))
+
 ## 1.3.0 (2023-05-26)
 
 ### Features
