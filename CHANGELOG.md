@@ -1,3 +1,9 @@
+## 1.3.0 (2023-05-26)
+
+### Features
+
+- add puppeteerArgs ([0ad68c9](https://github.com/ChiefORZ/pdf-generator/commit/0ad68c92e6248eb37b4832d30783337bec204802))
+
 ## 1.2.0 (2023-05-25)
 
 ### Features
