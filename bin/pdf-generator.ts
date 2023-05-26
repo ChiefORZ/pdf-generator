@@ -36,7 +36,8 @@ void (async () => {
         },
         'puppeteer-args': {
           alias: 'p',
-          type: 'array',
+          array: true,
+          type: 'string',
           describe:
             'Additional command line arguments to pass to the browser instance.',
           optional: true,
@@ -49,6 +50,7 @@ void (async () => {
       chromeExecutable: args.chrome as string,
       input: args._[0] as string,
       outputPath: args.output,
+      puppeteerArgs: args.puppeteerArgs,
     });
     process.stdout.write(res);
     process.exit(0);
