@@ -96,6 +96,7 @@ const pdfGenerator = async (args: IArgs) => {
   }
 
   debug('Launching chrome browser at', chromeExecutable);
+  debug('Running with additional puppeteer args ', args?.puppeteerArgs);
   const browser = await puppeteer.launch({
     executablePath: chromeExecutable,
     headless: true,
