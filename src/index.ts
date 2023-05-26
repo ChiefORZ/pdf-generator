@@ -49,6 +49,7 @@ interface IArgs {
   input: string;
   chromeExecutable: string;
   outputPath?: string;
+  puppeteerArgs?: string[];
 }
 
 const pdfGenerator = async (args: IArgs) => {
@@ -98,6 +99,7 @@ const pdfGenerator = async (args: IArgs) => {
   const browser = await puppeteer.launch({
     executablePath: chromeExecutable,
     headless: true,
+    args: args?.puppeteerArgs ?? [],
   });
 
   const page = await browser.newPage();

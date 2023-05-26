@@ -1,18 +1,20 @@
 const examples = [
   {
     description: 'Generate a PDF from a URL using pipe',
-    example:
-      '$0 https://google.com -c "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" > ./google.pdf',
+    example: '$0 https://google.com > ./google.pdf',
   },
   {
     description: 'Generate a PDF from a URL  on the desired path',
-    example:
-      '$0 https://google.com  -c "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" -o ./google.pdf',
+    example: '$0 https://google.com  -o ./google.pdf',
   },
   {
     description: 'Generate a PDF from a statically built website',
-    example:
-      '$0 ./my-website -c "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" -o ./website.pdf',
+    example: '$0 ./my-website -o ./website.pdf',
+  },
+  {
+    description:
+      'Additional command line arguments can be passed to the browser instance using the --puppeteer-args option. For example, to run the browser in headless mode',
+    example: '$0 https://google.com --puppeteer-args="--headless"',
   },
 ];
 
