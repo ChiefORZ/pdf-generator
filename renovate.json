@@ -1,5 +1,5 @@
 {
-  "$schema": "https: //docs.renovatebot.com/renovate-schema.json",
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "assignees": ["ChiefORZ"],
   "extends": [
     "config:base",
@@ -12,6 +12,8 @@
   "schedule": "every weekend",
   "packageRules": [
     {
+      "assignees": ["ChiefORZ"],
+      "automerge": true,
       "groupName": "all non-major dependencies",
       "matchUpdateTypes": ["patch", "minor"],
       "groupSlug": "all-minor-patch"
