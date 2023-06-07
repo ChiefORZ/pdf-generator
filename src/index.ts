@@ -54,6 +54,7 @@ interface IArgs {
   puppeteerArgs?: string[];
 }
 
+// @ts-ignore
 const pdfGenerator = async (args: IArgs) => {
   if (!args.input) {
     throw new Error(
