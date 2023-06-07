@@ -34,6 +34,11 @@ void (async () => {
             'The path to the chromium executable that will be used by puppeteer',
           optional: true,
         },
+        debug: {
+          alias: 'd',
+          choices: ['browser', 'url'],
+          describe: 'Debug the PDF Generator',
+        },
         'puppeteer-args': {
           alias: 'p',
           array: true,
@@ -52,8 +57,10 @@ void (async () => {
       outputPath: args.output,
       puppeteerArgs: args.puppeteerArgs,
     });
-    process.stdout.write(res);
-    process.exit(0);
+    if (res) {
+      process.stdout.write(res);
+      process.exit(0);
+    }
   } catch (err) {
     console.error(err);
     process.stdout.write(err.message);

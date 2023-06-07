@@ -47,8 +47,9 @@ const createExpressServer = (
   });
 
 interface IArgs {
-  input: string;
   chromeExecutable: string;
+  input: string;
+  debug?: 'browser' | 'url';
   outputPath?: string;
   puppeteerArgs?: string[];
 }
@@ -60,7 +61,7 @@ const pdfGenerator = async (args: IArgs) => {
     );
   }
 
-  let url;
+  let url: string | undefined;
   // check if input is a valid url
   if (args.input.match(urlRegExp)) {
     url = args.input;
@@ -72,7 +73,7 @@ const pdfGenerator = async (args: IArgs) => {
       );
     }
   }
-  let pathToStaticFiles;
+  let pathToStaticFiles: string | undefined;
   let server;
   if (!url) {
     pathToStaticFiles = path.isAbsolute(args.input)
@@ -100,7 +101,7 @@ const pdfGenerator = async (args: IArgs) => {
   debug('Running with additional puppeteer args ', args?.puppeteerArgs);
   const browser = await puppeteer.launch({
     executablePath: chromeExecutable,
-    headless: true,
+    headless: args.debug !== 'browser',
     args: args?.puppeteerArgs ?? [],
   });
 
@@ -134,60 +135,64 @@ const pdfGenerator = async (args: IArgs) => {
     );
     await Promise.all(canvasToImagePromises);
   }
-
-  // @ts-ignore
-  const pdfContent = await report.pdfPage(page, pdfOptions);
-
-  await browser.close();
-  if (server) await server.close();
-  debug('Closed chrome instance and express server');
-
-  const finalPdf = await PDFDocument.create();
-  if (pathToStaticFiles) {
-    finalPdf.registerFontkit(fontkit);
-    const fontsToInclude = await glob(
-      path.join(pathToStaticFiles, '**', '*.ttf')
-    );
-    await Promise.all(
-      fontsToInclude.map(async (fontToInclude) => {
-        const fontBytes = await fs.promises.readFile(fontToInclude);
-        return finalPdf.embedFont(fontBytes);
-      })
-    );
-  } else {
-    // TODO: Find a way to inject fonts that are loaded on websites
+  if (args.debug === 'url') {
+    process.stdout.write(url);
   }
+  if (!args.debug) {
+    // @ts-ignore
+    const pdfContent = await report.pdfPage(page, pdfOptions);
 
-  const content = await PDFDocument.load(pdfContent);
-  const contentPages = await finalPdf.copyPages(
-    content,
-    content.getPageIndices()
-  );
-  for (const contentPage of contentPages) {
-    finalPdf.addPage(contentPage);
-  }
+    await browser.close();
+    if (server) await server.close();
+    debug('Closed chrome instance and express server');
 
-  const pdfBytes = await finalPdf.save();
-
-  if (args.outputPath) {
-    const outputPath = path.isAbsolute(args.outputPath)
-      ? args.outputPath
-      : path.join(process.cwd(), args.outputPath);
-    try {
-      await lstat(outputPath);
-    } catch (_) {
-      await mkdir(outputPath.substring(0, outputPath.lastIndexOf(path.sep)), {
-        recursive: true,
-      });
+    const finalPdf = await PDFDocument.create();
+    if (pathToStaticFiles) {
+      finalPdf.registerFontkit(fontkit);
+      const fontsToInclude = await glob(
+        path.join(pathToStaticFiles, '**', '*.ttf')
+      );
+      await Promise.all(
+        fontsToInclude.map(async (fontToInclude) => {
+          const fontBytes = await fs.promises.readFile(fontToInclude);
+          return finalPdf.embedFont(fontBytes);
+        })
+      );
+    } else {
+      // TODO: Find a way to inject fonts that are loaded on websites
     }
-    debug('Writing file at', args.outputPath);
-    await writeFileAsync(args.outputPath, pdfBytes);
-    debug('PDF generation has been successfully finished!');
-    return args.outputPath;
-  }
 
-  debug('Return pdf content to stdout');
-  return pdfBytes;
+    const content = await PDFDocument.load(pdfContent);
+    const contentPages = await finalPdf.copyPages(
+      content,
+      content.getPageIndices()
+    );
+    for (const contentPage of contentPages) {
+      finalPdf.addPage(contentPage);
+    }
+
+    const pdfBytes = await finalPdf.save();
+
+    if (args.outputPath) {
+      const outputPath = path.isAbsolute(args.outputPath)
+        ? args.outputPath
+        : path.join(process.cwd(), args.outputPath);
+      try {
+        await lstat(outputPath);
+      } catch (_) {
+        await mkdir(outputPath.substring(0, outputPath.lastIndexOf(path.sep)), {
+          recursive: true,
+        });
+      }
+      debug('Writing file at', args.outputPath);
+      await writeFileAsync(args.outputPath, pdfBytes);
+      debug('PDF generation has been successfully finished!');
+      return args.outputPath;
+    }
+
+    debug('Return pdf content to stdout');
+    return pdfBytes;
+  }
 };
 
 export default pdfGenerator;
