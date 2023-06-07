@@ -9,7 +9,7 @@ import type { Server } from 'http';
 import path from 'path';
 import { PDFDocument } from 'pdf-lib';
 import PCR from 'puppeteer-chromium-resolver';
-import type { PaperFormat } from 'puppeteer-core';
+import type { PaperFormat, PDFOptions } from 'puppeteer-core';
 import puppeteer from 'puppeteer-core';
 import report from 'puppeteer-report';
 import util from 'util';
@@ -22,7 +22,7 @@ const debug = Debug('pdf-generator');
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-const pdfOptions = {
+const pdfOptions: PDFOptions = {
   format: 'a4' as PaperFormat,
   margin: {
     top: 0,
@@ -30,6 +30,7 @@ const pdfOptions = {
     left: 0,
     right: 0,
   },
+  printBackground: true,
 };
 
 const createExpressServer = (
