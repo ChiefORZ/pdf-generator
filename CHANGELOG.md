@@ -1,3 +1,9 @@
+## 1.4.0 (2023-06-07)
+
+### Features
+
+- set printBackground to true ([8195081](https://github.com/ChiefORZ/pdf-generator/commit/8195081c510af03e134affbcbf7bd6974b39c00a))
+
 ## 1.3.1 (2023-05-26)
 
 ### Bug Fixes
