@@ -89,8 +89,8 @@ devDependencies:
     specifier: ^4.0.0
     version: 4.0.0
   conventional-changelog-conventionalcommits:
-    specifier: ^5.0.0
-    version: 5.0.0
+    specifier: ^6.0.0
+    version: 6.0.0
   eslint:
     specifier: ^8.41.0
     version: 8.41.0
