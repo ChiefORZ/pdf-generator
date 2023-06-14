@@ -9,7 +9,8 @@
     ":automergeDigest",
     ":automergeMinor"
   ],
-  "schedule": "every weekend",
+  "schedule": ["before 3am on Monday"],
+  "semanticCommits": "enabled",
   "packageRules": [
     {
       "assignees": ["ChiefORZ"],
