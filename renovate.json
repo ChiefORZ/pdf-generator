@@ -17,10 +17,10 @@
       "automergeType": "pr",
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch",
-      "matchUpdateTypes": ["patch", "minor"]
+      "matchUpdateTypes": ["patch", "minor"],
+      "schedule": ["before 3am on Monday"]
     }
   ],
   "platformAutomerge": true,
-  "schedule": ["before 3am on Monday"],
   "semanticCommits": "enabled"
 }
