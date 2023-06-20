@@ -25,10 +25,10 @@ const writeFileAsync = util.promisify(fs.writeFile);
 const pdfOptions: PDFOptions = {
   format: 'a4' as PaperFormat,
   margin: {
-    top: 0,
     bottom: 0,
     left: 0,
     right: 0,
+    top: 0,
   },
   printBackground: true,
 };
@@ -101,9 +101,9 @@ const pdfGenerator = async (args: IArgs) => {
   debug('Launching chrome browser at', chromeExecutable);
   debug('Running with additional puppeteer args ', args?.puppeteerArgs);
   const browser = await puppeteer.launch({
+    args: args?.puppeteerArgs ?? [],
     executablePath: chromeExecutable,
     headless: args.debug !== 'browser',
-    args: args?.puppeteerArgs ?? [],
   });
 
   const page = await browser.newPage();
