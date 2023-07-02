@@ -1,0 +1,13 @@
+{
+  "entry": ["bin/*.ts", "src/index.ts"],
+  "ignore": ["src/createFunctionWaitForIdleNetwork.ts"],
+  "ignoreDependencies": [
+    "@types/conventional-changelog",
+    "@types/semver",
+    "conventional-changelog",
+    "conventional-changelog-conventionalcommits",
+    "semver",
+    "ts-node"
+  ],
+  "project": ["src/**/*.ts", "src/**/*.tsx"]
+}
