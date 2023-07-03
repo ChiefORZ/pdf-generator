@@ -1,6 +1,26 @@
 {
+  "name": "@chieforz/pdf-generator",
+  "version": "1.4.1",
+  "repository": "git@github.com:ChiefORZ/pdf-generator.git",
+  "license": "MIT",
   "author": "ChiefORZ <seb.schaffernak@gmail.com>",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "bin": "dist/bin/pdf-generator.js",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "ts-node-dev ./bin/pdf-generator",
+    "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
+    "precommit": "pretty-quick --staged && lint-staged",
+    "prepare": "husky install",
+    "release": "release-it",
+    "test": "npm-run-all test:*",
+    "test:knip": "knip"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix"
+  },
+  "prettier": "@chieforz/prettier-config",
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",
     "debug": "^4.3.4",
@@ -15,6 +35,7 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
+    "@chieforz/prettier-config": "^1.1.2",
     "@chieforz/tslint-config": "^1.1.1",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
@@ -54,27 +75,8 @@
     "node": ">=18",
     "pnpm": ">=7"
   },
-  "license": "MIT",
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix"
-  },
-  "main": "dist/src/index.js",
-  "name": "@chieforz/pdf-generator",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "repository": "git@github.com:ChiefORZ/pdf-generator.git",
-  "scripts": {
-    "build": "rimraf dist && tsc",
-    "dev": "ts-node-dev ./bin/pdf-generator",
-    "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
-    "precommit": "pretty-quick --staged && lint-staged",
-    "prepare": "husky install",
-    "release": "release-it",
-    "test": "npm-run-all test:*",
-    "test:knip": "knip"
-  },
-  "types": "dist/src/index.d.ts",
-  "version": "1.4.1"
+  }
 }
