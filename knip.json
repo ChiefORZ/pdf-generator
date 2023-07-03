@@ -2,10 +2,13 @@
   "entry": ["bin/*.ts", "src/index.ts"],
   "ignore": ["src/createFunctionWaitForIdleNetwork.ts"],
   "ignoreDependencies": [
+    "@chieforz/prettier-config",
     "@types/conventional-changelog",
     "@types/semver",
     "conventional-changelog",
     "conventional-changelog-conventionalcommits",
+    "prettier-plugin-packagejson",
+    "prettier-plugin-tailwindcss",
     "semver",
     "ts-node"
   ],
