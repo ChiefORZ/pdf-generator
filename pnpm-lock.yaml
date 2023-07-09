@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -24,8 +24,8 @@ dependencies:
     specifier: ^20.0.0
     version: 20.0.0(typescript@5.1.6)
   puppeteer-core:
-    specifier: ^20.7.4
-    version: 20.7.4(typescript@5.1.6)
+    specifier: ^20.8.0
+    version: 20.8.0(typescript@5.1.6)
   puppeteer-report:
     specifier: ^3.1.0
     version: 3.1.0
@@ -2151,10 +2151,10 @@ packages:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: true
 
-  /cross-fetch@3.1.6:
-    resolution: {integrity: sha512-riRvo06crlE8HiqOwIpQhxwdOk4fOeR7FVM/wXoxchFEqMNUjvbs3bfo4OTgMEMHzppd4DxFBDbyySj8Cv781g==}
+  /cross-fetch@4.0.0:
+    resolution: {integrity: sha512-e4a5N8lVvuLgAWgnCrLr2PP0YyDOTHa9H/Rj54dirp61qXnNq46m82bRhNqIA5VccJtWBvPTFRV3TtvHUKPB1g==}
     dependencies:
-      node-fetch: 2.6.11
+      node-fetch: 2.6.12
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -2926,6 +2926,7 @@ packages:
   /extract-zip@2.0.1:
     resolution: {integrity: sha512-GDhU9ntwuKyGXdZBUgTIe+vXnWj0fppUEtMDL0+idd5Sta8TGpHssn/eusA9mrPr9qNDym6SxAYZjNvCn/9RBg==}
     engines: {node: '>= 10.17.0'}
+    hasBin: true
     dependencies:
       debug: 4.3.4
       get-stream: 5.2.0
@@ -4603,6 +4604,19 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
+    dev: true
+
+  /node-fetch@2.6.12:
+    resolution: {integrity: sha512-C/fGU2E8ToujUivIO0H+tpQ6HWo4eEmchoPIoXtxCrVghxdKq+QOHqEZW7tuP3KlV3bC8FRMO5nMCC7Zm1VP6g==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: false
 
   /node-fetch@3.3.1:
     resolution: {integrity: sha512-cRVc/kyto/7E5shrWca1Wsea4y6tL9iYJE5FBCius3JQfb/4P4I295PfhgbJQBLTx6lATE4z+wK0rPM4VS2uow==}
@@ -5260,7 +5274,7 @@ packages:
       '@puppeteer/browsers': 1.4.0(typescript@5.1.6)
       eight-colors: 1.0.3
       gauge: 5.0.1
-      puppeteer-core: 20.7.4(typescript@5.1.6)
+      puppeteer-core: 20.8.0(typescript@5.1.6)
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -5269,8 +5283,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /puppeteer-core@20.7.4(typescript@5.1.6):
-    resolution: {integrity: sha512-7YZ1LmTo+5yM9uBNFTMJpE+lJjcIoNjKVarsYIk7o5WhgQNI9o5XgiQK5f71y1vWwr7sT/eGG75HXAehjnTBTg==}
+  /puppeteer-core@20.8.0(typescript@5.1.6):
+    resolution: {integrity: sha512-sQcuH6nv9jnFiaaePk53+C0O9BaJP6OaPmYKqJ3sWhziThv6uaaosK49Kg3g1HUUEP9KYhbOhedPIUCXJSQUxw==}
     engines: {node: '>=16.3.0'}
     peerDependencies:
       typescript: '>= 4.7.4'
@@ -5280,7 +5294,7 @@ packages:
     dependencies:
       '@puppeteer/browsers': 1.4.3(typescript@5.1.6)
       chromium-bidi: 0.4.16(devtools-protocol@0.0.1135028)
-      cross-fetch: 3.1.6
+      cross-fetch: 4.0.0
       debug: 4.3.4
       devtools-protocol: 0.0.1135028
       typescript: 5.1.6
