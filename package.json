@@ -72,7 +72,7 @@
   },
   "engines": {
     "node": ">=v18.17.0",
-    "pnpm": ">=7.33.5"
+    "pnpm": ">=8.6.10"
   },
   "publishConfig": {
     "access": "public",
