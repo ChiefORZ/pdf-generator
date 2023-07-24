@@ -35,7 +35,7 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@chieforz/prettier-config": "^1.1.2",
+    "@chieforz/prettier-config": "^1.1.3",
     "@chieforz/eslint-config-tslint-base": "^1.1.1",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
