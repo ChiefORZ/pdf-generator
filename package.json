@@ -71,8 +71,8 @@
     "ts-node-dev": "^2.0.0"
   },
   "engines": {
-    "node": ">=v18.17.0",
-    "pnpm": ">=8.6.11"
+    "node": ">=18.17",
+    "pnpm": ">=8.6"
   },
   "publishConfig": {
     "access": "public",
