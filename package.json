@@ -60,8 +60,7 @@
     "ts-node-dev": "^2.0.0"
   },
   "engines": {
-    "node": ">=18.17",
-    "pnpm": ">=8.6.12"
+    "node": ">=18.17"
   },
   "publishConfig": {
     "access": "public",
