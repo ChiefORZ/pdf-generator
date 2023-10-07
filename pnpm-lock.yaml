@@ -67,9 +67,6 @@ devDependencies:
   '@types/node':
     specifier: ^18.17.19
     version: 18.17.19
-  '@types/rimraf':
-    specifier: ^3.0.2
-    version: 3.0.2
   '@types/semver':
     specifier: ^7.5.2
     version: 7.5.2
@@ -955,13 +952,6 @@ packages:
 
   /@types/range-parser@1.2.4:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
-    dev: true
-
-  /@types/rimraf@3.0.2:
-    resolution: {integrity: sha512-F3OznnSLAUxFrCEu/L5PY8+ny8DtcFRjx7fZZ9bycvXRi3KPTRS9HOitGZwvPg0juRhXFWIeKX58cnX5YqLohQ==}
-    dependencies:
-      '@types/glob': 7.2.0
-      '@types/node': 18.17.19
     dev: true
 
   /@types/semver@7.5.2:
