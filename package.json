@@ -97,8 +97,8 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@chieforz/eslint-config-tslint-base": "^1.1.9",
-    "@chieforz/prettier-config": "^1.1.9",
+    "@chieforz/eslint-config-tslint-base": "^1.1.10",
+    "@chieforz/prettier-config": "^1.1.10",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
     "@release-it/conventional-changelog": "^7.0.2",
