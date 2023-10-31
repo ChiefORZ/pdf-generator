@@ -1,6 +1,11 @@
 {
-  "entry": ["bin/*.ts", "src/index.ts"],
-  "ignore": ["src/createFunctionWaitForIdleNetwork.ts"],
+  "entry": [
+    "bin/*.ts",
+    "src/index.ts"
+  ],
+  "ignore": [
+    "src/createFunctionWaitForIdleNetwork.ts"
+  ],
   "ignoreDependencies": [
     "@chieforz/prettier-config",
     "@types/conventional-changelog",
@@ -10,7 +15,12 @@
     "husky",
     "lint-staged",
     "npm-run-all",
-    "semver"
+    "semver",
+    "prettier-plugin-packagejson",
+    "prettier-plugin-tailwindcss"
   ],
-  "project": ["src/**/*.ts", "src/**/*.tsx"]
+  "project": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ]
 }
