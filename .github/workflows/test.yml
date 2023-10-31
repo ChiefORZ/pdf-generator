@@ -40,6 +40,10 @@ jobs:
 
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
+      
+      # Set up GitHub Actions caching for Wireit.
+      - uses: google/wireit@setup-github-actions-caching/v1
+
 
       - name: Build
         run: pnpm run build

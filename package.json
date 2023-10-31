@@ -8,14 +8,74 @@
   "types": "dist/src/index.d.ts",
   "bin": "dist/bin/pdf-generator.js",
   "scripts": {
-    "build": "rimraf dist && tsc",
-    "dev": "node --import tsx --watch ./bin/pdf-generator",
-    "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
-    "precommit": "lint-staged",
-    "prepare": "husky install",
-    "release": "release-it",
-    "test": "npm-run-all test:*",
-    "test:knip": "knip"
+    "build": "wireit",
+    "dev": "wireit",
+    "lint": "wireit",
+    "precommit": "wireit",
+    "prepare": "wireit",
+    "release": "wireit",
+    "test": "wireit",
+    "test:knip": "wireit"
+  },
+  "wireit": {
+    "build": {
+      "command": "tsc",
+      "files": [
+        "src/**/*",
+        "tsconfig.json"
+      ],
+      "clean": true,
+      "output": [
+        "dist/**"
+      ]
+    },
+    "dev": {
+      "command": "node --import tsx --watch ./bin/pdf-generator",
+      "files": [
+        "src/**/*",
+        "bin/pdf-generator"
+      ],
+      "service": true
+    },
+    "lint": {
+      "command": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
+      "files": [
+        "src/**/*"
+      ],
+      "output": []
+    },
+    "precommit": {
+      "command": "lint-staged",
+      "files": [
+        "src/**/*"
+      ],
+      "output": []
+    },
+    "prepare": {
+      "command": "husky install"
+    },
+    "release": {
+      "command": "release-it",
+      "files": [
+        "src/**/*",
+        "package.json"
+      ],
+      "output": []
+    },
+    "test": {
+      "command": "npm-run-all test:*",
+      "files": [
+        "src/**/*"
+      ],
+      "output": []
+    },
+    "test:knip": {
+      "command": "knip",
+      "files": [
+        "src/**/*"
+      ],
+      "output": []
+    }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "eslint --fix"
@@ -33,7 +93,6 @@
     "puppeteer-chromium-resolver": "^20.0.0",
     "puppeteer-core": "^21.4.1",
     "puppeteer-report": "^3.1.0",
-    "rimraf": "^5.0.5",
     "typescript": "^5.2.2",
     "yargs": "^17.7.2"
   },
@@ -57,7 +116,8 @@
     "lint-staged": "^15.0.2",
     "npm-run-all": "^4.1.5",
     "release-it": "^16.2.1",
-    "semver": "^7.5.4"
+    "semver": "^7.5.4",
+    "wireit": "^0.14.1"
   },
   "engines": {
     "node": ">=18.17"

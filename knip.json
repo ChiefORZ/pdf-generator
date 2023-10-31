@@ -7,8 +7,9 @@
     "@types/semver",
     "conventional-changelog",
     "conventional-changelog-conventionalcommits",
-    "prettier-plugin-packagejson",
-    "prettier-plugin-tailwindcss",
+    "husky",
+    "lint-staged",
+    "npm-run-all",
     "semver"
   ],
   "project": ["src/**/*.ts", "src/**/*.tsx"]
