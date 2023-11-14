@@ -1,5 +1,12 @@
 
 
+## [1.6.0](https://github.com/ChiefORZ/pdf-generator/compare/1.5.0...1.6.0) (2023-11-14)
+
+
+### Features
+
+* locate localy chrome, otherwise install ([1dffaaa](https://github.com/ChiefORZ/pdf-generator/commit/1dffaaa91b65190b468512889449061d71676574))
+
 ## 1.5.0 (2023-11-14)
 
 
