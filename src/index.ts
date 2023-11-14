@@ -6,6 +6,7 @@ import glob from 'fast-glob';
 import fs from 'fs';
 import { lstat, mkdir } from 'fs/promises';
 import type { Server } from 'http';
+import locateChrome from 'locate-chrome';
 import path from 'path';
 import { PDFDocument } from 'pdf-lib';
 import PCR from 'puppeteer-chromium-resolver';
@@ -94,9 +95,15 @@ const pdfGenerator = async (args: IArgs) => {
   let chromeExecutable = args.chromeExecutable;
 
   if (!chromeExecutable) {
-    const pcr = await PCR();
-    chromeExecutable = await pcr.executablePath;
-    process.env.PUPPETEER_EXECUTABLE_PATH = pcr.executablePath;
+    const locatedChrome = await locateChrome();
+    if (locatedChrome) {
+      chromeExecutable = locatedChrome;
+      process.env.PUPPETEER_EXECUTABLE_PATH = locatedChrome;
+    } else {
+      const pcr = await PCR();
+      chromeExecutable = await pcr.executablePath;
+      process.env.PUPPETEER_EXECUTABLE_PATH = pcr.executablePath;
+    }
   }
 
   debug('Launching chrome browser at', chromeExecutable);
