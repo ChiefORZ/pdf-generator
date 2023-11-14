@@ -96,6 +96,7 @@ const pdfGenerator = async (args: IArgs) => {
   if (!chromeExecutable) {
     const pcr = await PCR();
     chromeExecutable = await pcr.executablePath;
+    process.env.PUPPETEER_EXECUTABLE_PATH = pcr.executablePath;
   }
 
   debug('Launching chrome browser at', chromeExecutable);

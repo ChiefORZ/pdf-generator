@@ -16,43 +16,44 @@ void (async () => {
       .alias('version', 'v')
       .alias('version', 'V')
       .positional('input', {
-        type: 'string',
         describe: 'URL or filepath to statically built website',
+        type: 'string',
       })
       .demandCommand(1)
       .options({
-        output: {
-          alias: 'o',
-          type: 'string',
-          describe:
-            'Filepath to pdf file. When not defined, pdf buffer is returned in stdout',
-        },
         chrome: {
           alias: 'c',
-          type: 'string',
           describe:
             'The path to the chromium executable that will be used by puppeteer',
           optional: true,
+          type: 'string',
         },
         debug: {
           alias: 'd',
           choices: ['browser', 'url'],
           describe: 'Debug the PDF Generator',
         },
+        output: {
+          alias: 'o',
+          describe:
+            'Filepath to pdf file. When not defined, pdf buffer is returned in stdout',
+          type: 'string',
+        },
         'puppeteer-args': {
           alias: 'p',
           array: true,
-          type: 'string',
           describe:
             'Additional command line arguments to pass to the browser instance.',
           optional: true,
+          type: 'string',
         },
       })
       .epilogue(epilogue)
       .parseSync();
 
     const res = await pdfGenerator({
-      chromeExecutable: args.chrome as string,
+      chromeExecutable:
+        process.env.PUPPETEER_EXECUTABLE_PATH ?? (args.chrome as string),
       input: args._[0] as string,
       outputPath: args.output,
       puppeteerArgs: args.puppeteerArgs,
