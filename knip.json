@@ -1,23 +1,16 @@
 {
-  "entry": [
-    "bin/*.ts",
-    "src/index.ts"
-  ],
-  "ignore": [
-    "src/createFunctionWaitForIdleNetwork.ts"
-  ],
-  "ignoreDependencies": [
-    "@types/conventional-changelog",
-    "@types/semver",
-    "conventional-changelog",
-    "conventional-changelog-conventionalcommits",
-    "husky",
-    "lint-staged",
-    "npm-run-all",
-    "semver"
-  ],
-  "project": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ]
+	"entry": ["bin/*.ts", "src/index.ts"],
+	"ignore": ["src/createFunctionWaitForIdleNetwork.ts"],
+	"ignoreDependencies": [
+		"@chieforz/biome-config",
+		"@types/conventional-changelog",
+		"@types/semver",
+		"conventional-changelog",
+		"conventional-changelog-conventionalcommits",
+		"husky",
+		"lint-staged",
+		"npm-run-all",
+		"semver"
+	],
+	"project": ["src/**/*.ts", "src/**/*.tsx"]
 }
