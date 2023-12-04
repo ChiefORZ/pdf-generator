@@ -40,13 +40,15 @@ jobs:
 
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
-      
+
       # Set up GitHub Actions caching for Wireit.
       - uses: google/wireit@setup-github-actions-caching/v1
 
-
       - name: Build
         run: pnpm run build
+
+      - name: Format check
+        run: pnpm run format:check
 
       - name: Test
         run: pnpm run test
@@ -65,6 +67,6 @@ jobs:
           BEFORE: ${{ github.event.before }}
           SHA: ${{ github.sha }}
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LABEL: '// TODO'
-          COMMENT_MARKER: '//'
+          LABEL: "// TODO"
+          COMMENT_MARKER: "//"
         id: todo
