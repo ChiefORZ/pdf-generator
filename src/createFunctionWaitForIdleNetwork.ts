@@ -1,5 +1,5 @@
-import Debug from 'debug';
 import EventEmitter from 'events';
+import Debug from 'debug';
 
 const debug = Debug('pdf-generator:createFunctionWaitForIdleNetwork');
 
@@ -39,10 +39,7 @@ export function createFunctionWaitForIdleNetwork(page) {
    * @param failTimeout
    *   The maximum amount of time to wait for the network to become idle before rejecting.
    */
-  async function waitForIdleNetwork(
-    idleTimeout = 1000,
-    failTimeout = 30 * 1000
-  ) {
+  async function waitForIdleNetwork(idleTimeout = 1000, failTimeout = 30 * 1000) {
     debug('idleTimeout ', idleTimeout);
     debug('failTimeout ', failTimeout);
     let failTimer: NodeJS.Timeout;
@@ -53,8 +50,8 @@ export function createFunctionWaitForIdleNetwork(page) {
       function fail() {
         reject(
           new Error(
-            `After ${failTimeout}ms, there are still ${pendingRequestIds.size} pending network requests.`
-          )
+            `After ${failTimeout}ms, there are still ${pendingRequestIds.size} pending network requests.`,
+          ),
         );
       }
 
@@ -67,8 +64,8 @@ export function createFunctionWaitForIdleNetwork(page) {
         clearTimeout(idleTimer);
         reject(
           new Error(
-            `A network request has failed, there are still ${pendingRequestIds.size} pending network requests.`
-          )
+            `A network request has failed, there are still ${pendingRequestIds.size} pending network requests.`,
+          ),
         );
       }
 

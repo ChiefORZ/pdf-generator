@@ -10,6 +10,8 @@
   "scripts": {
     "build": "wireit",
     "dev": "wireit",
+    "format:check": "wireit",
+    "format:write": "wireit",
     "lint": "wireit",
     "precommit": "wireit",
     "prepare": "wireit",
@@ -17,70 +19,9 @@
     "test": "wireit",
     "test:knip": "wireit"
   },
-  "wireit": {
-    "build": {
-      "command": "tsc",
-      "files": [
-        "src/**/*",
-        "tsconfig.json"
-      ],
-      "clean": true,
-      "output": [
-        "dist/**"
-      ]
-    },
-    "dev": {
-      "command": "node --import tsx --watch ./bin/pdf-generator",
-      "files": [
-        "src/**/*",
-        "bin/pdf-generator"
-      ],
-      "service": true
-    },
-    "lint": {
-      "command": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
-      "files": [
-        "src/**/*"
-      ],
-      "output": []
-    },
-    "precommit": {
-      "command": "lint-staged",
-      "files": [
-        "src/**/*"
-      ],
-      "output": []
-    },
-    "prepare": {
-      "command": "husky install"
-    },
-    "release": {
-      "command": "release-it",
-      "files": [
-        "src/**/*",
-        "package.json"
-      ],
-      "output": []
-    },
-    "test": {
-      "command": "npm-run-all test:*",
-      "files": [
-        "src/**/*"
-      ],
-      "output": []
-    },
-    "test:knip": {
-      "command": "knip",
-      "files": [
-        "src/**/*"
-      ],
-      "output": []
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "eslint --fix"
   },
-  "prettier": "@chieforz/prettier-config",
   "eslintConfig": {
     "extends": "@chieforz/eslint-config-tslint-base"
   },
@@ -98,8 +39,9 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.4.1",
+    "@chieforz/biome-config": "^1.2.3",
     "@chieforz/eslint-config-tslint-base": "^1.2.3",
-    "@chieforz/prettier-config": "^1.2.3",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
     "@release-it/conventional-changelog": "^8.0.1",
@@ -116,8 +58,6 @@
     "knip": "^2.43.0",
     "lint-staged": "^15.2.0",
     "npm-run-all": "^4.1.5",
-    "prettier-plugin-packagejson": "^2.4.7",
-    "prettier-plugin-tailwindcss": "^0.5.7",
     "release-it": "^17.0.0",
     "semver": "^7.5.4",
     "wireit": "^0.14.1"
@@ -128,5 +68,54 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "wireit": {
+    "build": {
+      "command": "tsc",
+      "files": ["src/**/*", "tsconfig.json"],
+      "clean": true,
+      "output": ["dist/**"]
+    },
+    "dev": {
+      "command": "node --import tsx --watch ./bin/pdf-generator",
+      "files": ["src/**/*", "bin/pdf-generator"],
+      "service": true
+    },
+    "format:check": {
+      "command": "biome check ./src",
+      "files": ["src/**/*.{js,jsx,ts,tsx}"],
+      "output": []
+    },
+    "format:write": {
+      "command": "biome check --apply ./src"
+    },
+    "lint": {
+      "command": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
+      "files": ["src/**/*"],
+      "output": []
+    },
+    "precommit": {
+      "command": "lint-staged",
+      "files": ["src/**/*"],
+      "output": []
+    },
+    "prepare": {
+      "command": "husky install"
+    },
+    "release": {
+      "command": "release-it",
+      "files": ["src/**/*", "package.json"],
+      "output": []
+    },
+    "test": {
+      "command": "npm-run-all test:*",
+      "files": ["src/**/*"],
+      "output": []
+    },
+    "test:knip": {
+      "command": "knip",
+      "files": ["src/**/*"],
+      "output": []
+    }
   }
 }
