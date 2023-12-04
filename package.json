@@ -10,6 +10,8 @@
   "scripts": {
     "build": "wireit",
     "dev": "wireit",
+    "format:check": "wireit",
+    "format:write": "wireit",
     "lint": "wireit",
     "precommit": "wireit",
     "prepare": "wireit",
@@ -78,6 +80,14 @@
       "command": "node --import tsx --watch ./bin/pdf-generator",
       "files": ["src/**/*", "bin/pdf-generator"],
       "service": true
+    },
+    "format:check": {
+      "command": "biome check ./src",
+      "files": ["src/**/*.{js,jsx,ts,tsx}"],
+      "output": []
+    },
+    "format:write": {
+      "command": "biome check --apply ./src"
     },
     "lint": {
       "command": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
