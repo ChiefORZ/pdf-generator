@@ -7,7 +7,6 @@
     "src/createFunctionWaitForIdleNetwork.ts"
   ],
   "ignoreDependencies": [
-    "@chieforz/prettier-config",
     "@types/conventional-changelog",
     "@types/semver",
     "conventional-changelog",
@@ -15,9 +14,7 @@
     "husky",
     "lint-staged",
     "npm-run-all",
-    "semver",
-    "prettier-plugin-packagejson",
-    "prettier-plugin-tailwindcss"
+    "semver"
   ],
   "project": [
     "src/**/*.ts",
