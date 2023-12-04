@@ -10,13 +10,13 @@ import locateChrome from 'locate-chrome';
 import path from 'path';
 import { PDFDocument } from 'pdf-lib';
 import PCR from 'puppeteer-chromium-resolver';
-import type { PaperFormat, PDFOptions } from 'puppeteer-core';
+import type { PaperFormat,PDFOptions } from 'puppeteer-core';
 import puppeteer from 'puppeteer-core';
 import report from 'puppeteer-report';
 import util from 'util';
 
 const urlRegExp = new RegExp(
-  /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
+  /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/,
 );
 
 const debug = Debug('pdf-generator');
@@ -34,9 +34,7 @@ const pdfOptions: PDFOptions = {
   printBackground: true,
 };
 
-const createExpressServer = (
-  port = 13770
-): Promise<{ app: Express; server: Server }> =>
+const createExpressServer = (port = 13770): Promise<{ app: Express; server: Server }> =>
   new Promise((resolve) => {
     const app = express();
     const server = app.listen(port, () => {
@@ -58,9 +56,7 @@ interface IArgs {
 // @ts-ignore
 const pdfGenerator = async (args: IArgs) => {
   if (!args.input) {
-    throw new Error(
-      'A valid input is needed, provide either a URL or a Path to a static website.'
-    );
+    throw new Error('A valid input is needed, provide either a URL or a Path to a static website.');
   }
 
   let url: string | undefined;
@@ -71,7 +67,7 @@ const pdfGenerator = async (args: IArgs) => {
     const pathStat = await lstat(args.input);
     if (pathStat.isFile()) {
       throw new Error(
-        'A path to a statically built website is needed. Please provide a folder instead of a file.'
+        'A path to a statically built website is needed. Please provide a folder instead of a file.',
       );
     }
   }
@@ -126,22 +122,20 @@ const pdfGenerator = async (args: IArgs) => {
   const canvasToImageElements = await page.$$('.canvas-to-image');
 
   if (canvasToImageElements.length) {
-    const canvasToImagePromises = canvasToImageElements.map(
-      async (canvasToImageElement) => {
-        const base64Screenshot = (await canvasToImageElement.screenshot({
-          encoding: 'base64',
-        })) as string;
-        await canvasToImageElement.$eval(
-          '*',
-          (element, base64) => {
-            // @ts-ignore ts(2339)
-            element.style.display = 'none';
-            element.outerHTML = `<img src="data:image/png;base64, ${base64}" />`;
-          },
-          base64Screenshot
-        );
-      }
-    );
+    const canvasToImagePromises = canvasToImageElements.map(async (canvasToImageElement) => {
+      const base64Screenshot = (await canvasToImageElement.screenshot({
+        encoding: 'base64',
+      })) as string;
+      await canvasToImageElement.$eval(
+        '*',
+        (element, base64) => {
+          // @ts-ignore ts(2339)
+          element.style.display = 'none';
+          element.outerHTML = `<img src="data:image/png;base64, ${base64}" />`;
+        },
+        base64Screenshot,
+      );
+    });
     await Promise.all(canvasToImagePromises);
   }
   if (args.debug === 'url') {
@@ -158,24 +152,19 @@ const pdfGenerator = async (args: IArgs) => {
     const finalPdf = await PDFDocument.create();
     if (pathToStaticFiles) {
       finalPdf.registerFontkit(fontkit);
-      const fontsToInclude = await glob(
-        path.join(pathToStaticFiles, '**', '*.ttf')
-      );
+      const fontsToInclude = await glob(path.join(pathToStaticFiles, '**', '*.ttf'));
       await Promise.all(
         fontsToInclude.map(async (fontToInclude) => {
           const fontBytes = await fs.promises.readFile(fontToInclude);
           return finalPdf.embedFont(fontBytes);
-        })
+        }),
       );
     } else {
       // TODO: Find a way to inject fonts that are loaded on websites
     }
 
     const content = await PDFDocument.load(pdfContent);
-    const contentPages = await finalPdf.copyPages(
-      content,
-      content.getPageIndices()
-    );
+    const contentPages = await finalPdf.copyPages(content, content.getPageIndices());
     for (const contentPage of contentPages) {
       finalPdf.addPage(contentPage);
     }

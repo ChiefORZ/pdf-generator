@@ -70,35 +70,23 @@
   "wireit": {
     "build": {
       "command": "tsc",
-      "files": [
-        "src/**/*",
-        "tsconfig.json"
-      ],
+      "files": ["src/**/*", "tsconfig.json"],
       "clean": true,
-      "output": [
-        "dist/**"
-      ]
+      "output": ["dist/**"]
     },
     "dev": {
       "command": "node --import tsx --watch ./bin/pdf-generator",
-      "files": [
-        "src/**/*",
-        "bin/pdf-generator"
-      ],
+      "files": ["src/**/*", "bin/pdf-generator"],
       "service": true
     },
     "lint": {
       "command": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
-      "files": [
-        "src/**/*"
-      ],
+      "files": ["src/**/*"],
       "output": []
     },
     "precommit": {
       "command": "lint-staged",
-      "files": [
-        "src/**/*"
-      ],
+      "files": ["src/**/*"],
       "output": []
     },
     "prepare": {
@@ -106,24 +94,17 @@
     },
     "release": {
       "command": "release-it",
-      "files": [
-        "src/**/*",
-        "package.json"
-      ],
+      "files": ["src/**/*", "package.json"],
       "output": []
     },
     "test": {
       "command": "npm-run-all test:*",
-      "files": [
-        "src/**/*"
-      ],
+      "files": ["src/**/*"],
       "output": []
     },
     "test:knip": {
       "command": "knip",
-      "files": [
-        "src/**/*"
-      ],
+      "files": ["src/**/*"],
       "output": []
     }
   }
