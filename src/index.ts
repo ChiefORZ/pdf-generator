@@ -1,19 +1,19 @@
+import fs from 'fs';
+import type { Server } from 'http';
+import path from 'path';
+import util from 'util';
 import fontkit from '@pdf-lib/fontkit';
 import Debug from 'debug';
 import type { Express } from 'express';
 import express from 'express';
 import glob from 'fast-glob';
-import fs from 'fs';
 import { lstat, mkdir } from 'fs/promises';
-import type { Server } from 'http';
 import locateChrome from 'locate-chrome';
-import path from 'path';
 import { PDFDocument } from 'pdf-lib';
 import PCR from 'puppeteer-chromium-resolver';
-import type { PaperFormat,PDFOptions } from 'puppeteer-core';
+import type { PDFOptions, PaperFormat } from 'puppeteer-core';
 import puppeteer from 'puppeteer-core';
 import report from 'puppeteer-report';
-import util from 'util';
 
 const urlRegExp = new RegExp(
   /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/,

@@ -1,5 +1,5 @@
-import Debug from 'debug';
 import EventEmitter from 'events';
+import Debug from 'debug';
 
 const debug = Debug('pdf-generator:createFunctionWaitForIdleNetwork');
 
