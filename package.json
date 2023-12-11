@@ -33,9 +33,9 @@
     "locate-chrome": "^0.1.1",
     "pdf-lib": "^1.17.1",
     "puppeteer-chromium-resolver": "^21.0.0",
-    "puppeteer-core": "^21.5.2",
+    "puppeteer-core": "^21.6.0",
     "puppeteer-report": "^3.1.0",
-    "typescript": "^5.3.2",
+    "typescript": "^5.3.3",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
@@ -48,7 +48,7 @@
     "@types/conventional-changelog": "^3.1.5",
     "@types/debug": "^4.1.12",
     "@types/express": "^4.17.21",
-    "@types/node": "^20.10.3",
+    "@types/node": "^20.10.4",
     "@types/semver": "^7.5.6",
     "@types/yargs": "^17.0.32",
     "conventional-changelog": "^5.1.0",
@@ -58,7 +58,7 @@
     "knip": "^2.43.0",
     "lint-staged": "^15.2.0",
     "npm-run-all": "^4.1.5",
-    "release-it": "^17.0.0",
+    "release-it": "^17.0.1",
     "semver": "^7.5.4",
     "wireit": "^0.14.1"
   },
