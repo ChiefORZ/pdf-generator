@@ -3,6 +3,7 @@
   "entry": ["bin/*.ts", "src/index.ts"],
   "ignore": ["src/createFunctionWaitForIdleNetwork.ts"],
   "ignoreDependencies": [
+    "@biomejs/biome",
     "@chieforz/biome-config",
     "@types/conventional-changelog",
     "@types/semver",
