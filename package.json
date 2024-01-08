@@ -60,6 +60,7 @@
     "npm-run-all": "^4.1.5",
     "release-it": "^17.0.1",
     "semver": "^7.5.4",
+    "tsx": "^4.7.0",
     "wireit": "^0.14.1"
   },
   "packageManager": "pnpm@8.12.0",
@@ -73,18 +74,28 @@
   "wireit": {
     "build": {
       "command": "tsc",
-      "files": ["src/**/*", "tsconfig.json"],
+      "files": [
+        "src/**/*",
+        "tsconfig.json"
+      ],
       "clean": true,
-      "output": ["dist/**"]
+      "output": [
+        "dist/**"
+      ]
     },
     "dev": {
       "command": "node --import tsx --watch ./bin/pdf-generator",
-      "files": ["src/**/*", "bin/pdf-generator"],
+      "files": [
+        "src/**/*",
+        "bin/pdf-generator"
+      ],
       "service": true
     },
     "format:check": {
       "command": "biome check ./src",
-      "files": ["src/**/*.{js,jsx,ts,tsx}"],
+      "files": [
+        "src/**/*.{js,jsx,ts,tsx}"
+      ],
       "output": []
     },
     "format:write": {
@@ -92,12 +103,16 @@
     },
     "lint": {
       "command": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
-      "files": ["src/**/*"],
+      "files": [
+        "src/**/*"
+      ],
       "output": []
     },
     "precommit": {
       "command": "lint-staged",
-      "files": ["src/**/*"],
+      "files": [
+        "src/**/*"
+      ],
       "output": []
     },
     "prepare": {
@@ -105,17 +120,24 @@
     },
     "release": {
       "command": "release-it",
-      "files": ["src/**/*", "package.json"],
+      "files": [
+        "src/**/*",
+        "package.json"
+      ],
       "output": []
     },
     "test": {
       "command": "npm-run-all test:*",
-      "files": ["src/**/*"],
+      "files": [
+        "src/**/*"
+      ],
       "output": []
     },
     "test:knip": {
       "command": "knip",
-      "files": ["src/**/*"],
+      "files": [
+        "src/**/*"
+      ],
       "output": []
     }
   }
