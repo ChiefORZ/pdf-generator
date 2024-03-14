@@ -20,7 +20,8 @@
     "test:knip": "wireit"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix"
+    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix",
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "biome check --apply"
   },
   "eslintConfig": {
     "extends": "@chieforz/eslint-config-tslint-base"
