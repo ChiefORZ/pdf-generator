@@ -34,7 +34,7 @@
     "locate-chrome": "^0.1.1",
     "pdf-lib": "^1.17.1",
     "puppeteer-chromium-resolver": "^22.0.0",
-    "puppeteer-core": "^22.9.0",
+    "puppeteer-core": "^22.10.0",
     "puppeteer-report": "^3.1.0",
     "typescript": "^5.4.5",
     "yargs": "^17.7.2"
@@ -57,11 +57,11 @@
     "eslint": "^9.3.0",
     "husky": "^9.0.11",
     "knip": "^5.16.0",
-    "lint-staged": "^15.2.2",
+    "lint-staged": "^15.2.5",
     "npm-run-all2": "^6.2.0",
-    "release-it": "^17.2.1",
+    "release-it": "^17.3.0",
     "semver": "^7.6.2",
-    "tsx": "^4.10.5",
+    "tsx": "^4.11.0",
     "wireit": "^0.14.4"
   },
   "packageManager": "pnpm@8.12.0",
