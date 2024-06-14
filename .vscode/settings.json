@@ -1,9 +1,4 @@
 {
-  "search.exclude": {
-    "**/.yarn": true,
-    "**/.pnp.*": true
-  },
-  "typescript.enablePromptUseWorkspaceTsdk": true,
   "cSpell.words": [
     "chieforz",
     "fontkit",
@@ -11,5 +6,11 @@
     "requestfailed",
     "requestfinished",
     "WAITFOR"
-  ]
+  ],
+  "eslint.experimental.useFlatConfig": true,
+  "search.exclude": {
+    "**/.pnp.*": true,
+    "**/.yarn": true
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
