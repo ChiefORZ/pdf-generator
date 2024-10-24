@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@chieforz/biome-config": "^1.4.2",
-    "@chieforz/eslint-config-tslint-base": "^1.4.2",
+    "@chieforz/biome-config": "^1.4.4",
+    "@chieforz/eslint-config-tslint-base": "^1.4.4",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@release-it/conventional-changelog": "^8.0.2",
