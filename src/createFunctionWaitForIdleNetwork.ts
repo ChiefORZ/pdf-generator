@@ -1,4 +1,4 @@
-import EventEmitter from 'events';
+import EventEmitter from 'node:events';
 import Debug from 'debug';
 
 const debug = Debug('pdf-generator:createFunctionWaitForIdleNetwork');
@@ -74,7 +74,7 @@ export function createFunctionWaitForIdleNetwork(page) {
 
       const puppeteerWaitForTimeout =
         (process.env.PUPPETEER_WAITFOR_TIMEOUT &&
-          parseInt(process.env.PUPPETEER_WAITFOR_TIMEOUT, 10)) ||
+          Number.parseInt(process.env.PUPPETEER_WAITFOR_TIMEOUT, 10)) ||
         1000;
       // Handle edge case where neither active nor idle is emitted during the lifetime of this promise.
       setTimeout(() => {

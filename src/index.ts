@@ -1,13 +1,14 @@
-import fs from 'fs';
-import type { Server } from 'http';
-import path from 'path';
-import util from 'util';
+import fs from 'node:fs';
+import { lstat, mkdir } from 'node:fs/promises';
+import type { Server } from 'node:https';
+import type { AddressInfo } from 'node:net';
+import path from 'node:path';
+import util from 'node:util';
 import fontkit from '@pdf-lib/fontkit';
 import Debug from 'debug';
 import type { Express } from 'express';
 import express from 'express';
 import glob from 'fast-glob';
-import { lstat, mkdir } from 'fs/promises';
 import locateChrome from 'locate-chrome';
 import { PDFDocument } from 'pdf-lib';
 import PCR from 'puppeteer-chromium-resolver';
@@ -38,6 +39,7 @@ const createExpressServer = (port = 13770): Promise<{ app: Express; server: Serv
   new Promise((resolve) => {
     const app = express();
     const server = app.listen(port, () => {
+      // @ts-ignore
       resolve({ app, server });
     });
     server.on('error', () => {
@@ -72,7 +74,7 @@ const pdfGenerator = async (args: IArgs) => {
     }
   }
   let pathToStaticFiles: string | undefined;
-  let server;
+  let server: Server | undefined;
   if (!url) {
     pathToStaticFiles = path.isAbsolute(args.input)
       ? args.input
@@ -80,7 +82,7 @@ const pdfGenerator = async (args: IArgs) => {
     const expressServer = await createExpressServer();
     const { app } = expressServer;
     server = expressServer.server;
-    const { port } = server.address();
+    const { port } = server.address() as AddressInfo;
     debug('Express server initiated on port', port);
 
     debug('Serving static file from', pathToStaticFiles);

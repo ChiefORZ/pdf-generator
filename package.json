@@ -8,11 +8,10 @@
   "types": "dist/src/index.d.ts",
   "bin": "dist/bin/pdf-generator.js",
   "scripts": {
+    "biome:check": "wireit",
+    "biome:write": "wireit",
     "build": "wireit",
     "dev": "wireit",
-    "format:check": "wireit",
-    "format:write": "wireit",
-    "lint": "wireit",
     "precommit": "wireit",
     "prepare": "wireit",
     "release": "wireit",
@@ -20,8 +19,7 @@
     "test:knip": "wireit"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix",
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "biome check --apply"
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "biome check --write"
   },
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",
@@ -38,8 +36,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@chieforz/biome-config": "^1.4.4",
-    "@chieforz/eslint-config-tslint-base": "^1.4.4",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@release-it/conventional-changelog": "^8.0.2",
@@ -51,7 +47,6 @@
     "@types/yargs": "^17.0.33",
     "conventional-changelog": "^6.0.0",
     "conventional-changelog-conventionalcommits": "^8.0.0",
-    "eslint": "^9.13.0",
     "husky": "^9.1.6",
     "knip": "^5.33.3",
     "lint-staged": "^15.2.10",
@@ -72,45 +67,26 @@
   "wireit": {
     "build": {
       "command": "tsc",
-      "files": [
-        "src/**/*",
-        "tsconfig.json"
-      ],
+      "files": ["src/**/*", "tsconfig.json"],
       "clean": true,
-      "output": [
-        "dist/**"
-      ]
+      "output": ["dist/**"]
     },
     "dev": {
       "command": "node --import tsx --watch ./bin/pdf-generator",
-      "files": [
-        "src/**/*",
-        "bin/pdf-generator"
-      ],
+      "files": ["src/**/*", "bin/pdf-generator"],
       "service": true
     },
-    "format:check": {
+    "biome:check": {
       "command": "biome check ./src",
-      "files": [
-        "src/**/*.{js,jsx,ts,tsx}"
-      ],
+      "files": ["src/**/*.{js,jsx,ts,tsx}"],
       "output": []
     },
-    "format:write": {
-      "command": "biome check --apply ./src"
-    },
-    "lint": {
-      "command": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
-      "files": [
-        "src/**/*"
-      ],
-      "output": []
+    "biome:write": {
+      "command": "biome check --write ./src"
     },
     "precommit": {
       "command": "lint-staged",
-      "files": [
-        "src/**/*"
-      ],
+      "files": ["src/**/*"],
       "output": []
     },
     "prepare": {
@@ -118,24 +94,17 @@
     },
     "release": {
       "command": "release-it",
-      "files": [
-        "src/**/*",
-        "package.json"
-      ],
+      "files": ["src/**/*", "package.json"],
       "output": []
     },
     "test": {
       "command": "npm-run-all test:*",
-      "files": [
-        "src/**/*"
-      ],
+      "files": ["src/**/*"],
       "output": []
     },
     "test:knip": {
       "command": "knip",
-      "files": [
-        "src/**/*"
-      ],
+      "files": ["src/**/*"],
       "output": []
     }
   }
