@@ -1,14 +1,13 @@
 {
-	"$schema": "https://unpkg.com/knip@3/schema.json",
-	"entry": ["bin/*.ts", "src/index.ts"],
-	"ignore": ["src/createFunctionWaitForIdleNetwork.ts"],
-	"ignoreDependencies": [
-		"@chieforz/biome-config",
-		"@types/conventional-changelog",
-		"@types/semver",
-		"conventional-changelog",
-		"conventional-changelog-conventionalcommits",
-		"semver"
-	],
-	"project": ["src/**/*.ts", "src/**/*.tsx"]
+  "$schema": "https://unpkg.com/knip@3/schema.json",
+  "entry": ["bin/*.ts", "src/index.ts"],
+  "ignore": ["src/createFunctionWaitForIdleNetwork.ts"],
+  "ignoreDependencies": [
+    "@types/conventional-changelog",
+    "@types/semver",
+    "conventional-changelog",
+    "conventional-changelog-conventionalcommits",
+    "semver"
+  ],
+  "project": ["src/**/*.ts", "src/**/*.tsx"]
 }
