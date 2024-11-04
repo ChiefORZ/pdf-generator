@@ -27,8 +27,8 @@ dependencies:
     specifier: ^23.0.0
     version: 23.0.0
   puppeteer-core:
-    specifier: ^23.6.0
-    version: 23.6.0
+    specifier: ^23.6.1
+    version: 23.6.1
   puppeteer-report:
     specifier: ^3.1.0
     version: 3.1.0
@@ -45,13 +45,13 @@ devDependencies:
     version: 1.9.4
   '@commitlint/cli':
     specifier: ^19.5.0
-    version: 19.5.0(@types/node@20.17.1)(typescript@5.6.3)
+    version: 19.5.0(@types/node@20.17.6)(typescript@5.6.3)
   '@commitlint/config-conventional':
     specifier: ^19.5.0
     version: 19.5.0
   '@release-it/conventional-changelog':
-    specifier: ^9.0.1
-    version: 9.0.1(release-it@17.10.0)
+    specifier: ^9.0.2
+    version: 9.0.2(release-it@17.10.0)
   '@types/conventional-changelog':
     specifier: ^3.1.5
     version: 3.1.5
@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^5.0.0
     version: 5.0.0
   '@types/node':
-    specifier: ^20.17.1
-    version: 20.17.1
+    specifier: ^20.17.6
+    version: 20.17.6
   '@types/semver':
     specifier: ^7.5.8
     version: 7.5.8
@@ -80,8 +80,8 @@ devDependencies:
     specifier: ^9.1.6
     version: 9.1.6
   knip:
-    specifier: ^5.34.1
-    version: 5.34.1(@types/node@20.17.1)(typescript@5.6.3)
+    specifier: ^5.36.2
+    version: 5.36.2(@types/node@20.17.6)(typescript@5.6.3)
   lint-staged:
     specifier: ^15.2.10
     version: 15.2.10
@@ -214,14 +214,14 @@ packages:
     dev: true
     optional: true
 
-  /@commitlint/cli@19.5.0(@types/node@20.17.1)(typescript@5.6.3):
+  /@commitlint/cli@19.5.0(@types/node@20.17.6)(typescript@5.6.3):
     resolution: {integrity: sha512-gaGqSliGwB86MDmAAKAtV9SV1SHdmN8pnGq4EJU4+hLisQ7IFfx4jvU4s+pk6tl0+9bv6yT+CaZkufOinkSJIQ==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
       '@commitlint/format': 19.5.0
       '@commitlint/lint': 19.5.0
-      '@commitlint/load': 19.5.0(@types/node@20.17.1)(typescript@5.6.3)
+      '@commitlint/load': 19.5.0(@types/node@20.17.6)(typescript@5.6.3)
       '@commitlint/read': 19.5.0
       '@commitlint/types': 19.5.0
       tinyexec: 0.3.0
@@ -290,7 +290,7 @@ packages:
       '@commitlint/types': 19.5.0
     dev: true
 
-  /@commitlint/load@19.5.0(@types/node@20.17.1)(typescript@5.6.3):
+  /@commitlint/load@19.5.0(@types/node@20.17.6)(typescript@5.6.3):
     resolution: {integrity: sha512-INOUhkL/qaKqwcTUvCE8iIUf5XHsEPCLY9looJ/ipzi7jtGhgmtH7OOFiNvwYgH7mA8osUWOUDV8t4E2HAi4xA==}
     engines: {node: '>=v18'}
     dependencies:
@@ -300,7 +300,7 @@ packages:
       '@commitlint/types': 19.5.0
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.6.3)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.17.1)(cosmiconfig@9.0.0)(typescript@5.6.3)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.17.6)(cosmiconfig@9.0.0)(typescript@5.6.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -811,8 +811,8 @@ packages:
       - supports-color
     dev: false
 
-  /@release-it/conventional-changelog@9.0.1(release-it@17.10.0):
-    resolution: {integrity: sha512-7vGLMLcj/MaQjktNPR0rI6fdFVvVDXpOqk/fVTaFSeMVd9vjpVGrvRg5+Ko82Z/dOsiLGLEMFMQ9Xu31YjvJ5g==}
+  /@release-it/conventional-changelog@9.0.2(release-it@17.10.0):
+    resolution: {integrity: sha512-10IF0E3QmGp67d3WDFekm8ESIhE08duy8dYI9UOFGbQDmhptxwoYbtxypzIel52+cxSDD6gEh/FVLhKlQmJqAA==}
     engines: {node: ^18.18.0 || ^20.9.0 || ^22.0.0}
     peerDependencies:
       release-it: ^17.0.0
@@ -850,13 +850,13 @@ packages:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
     dev: true
 
   /@types/connect@3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
     dev: true
 
   /@types/conventional-changelog-core@4.2.1:
@@ -866,7 +866,7 @@ packages:
       '@types/conventional-commits-parser': 5.0.0
       '@types/conventional-recommended-bump': 6.1.0
       '@types/git-raw-commits': 2.0.1
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
       '@types/normalize-package-data': 2.4.4
     dev: true
 
@@ -874,7 +874,7 @@ packages:
     resolution: {integrity: sha512-S7lJJByPMkkocMWnDKOtkSLi9yXu619+GhGejPnCiNK1Dgwjf5jjzBxXYgMv47tBG8MokmCCV1sWhI53lFl6FA==}
     dependencies:
       '@types/conventional-commits-parser': 5.0.0
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
     dev: true
 
   /@types/conventional-changelog@3.1.5:
@@ -883,19 +883,19 @@ packages:
       '@types/conventional-changelog-core': 4.2.1
       '@types/conventional-changelog-writer': 4.0.1
       '@types/conventional-commits-parser': 3.0.2
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
     dev: true
 
   /@types/conventional-commits-parser@3.0.2:
     resolution: {integrity: sha512-1kVPUHFaart1iGRFxKn8WNXYEDVAgMb+DLatgql2dGg9jTGf3bNxWtN//C/tDG3ckOLg4u7SSx+qcn8VjzI5zg==}
     dependencies:
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
     dev: true
 
   /@types/conventional-commits-parser@5.0.0:
     resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
     dependencies:
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
     dev: true
 
   /@types/conventional-recommended-bump@6.1.0:
@@ -915,7 +915,7 @@ packages:
   /@types/express-serve-static-core@5.0.1:
     resolution: {integrity: sha512-CRICJIl0N5cXDONAdlTv5ShATZ4HEwk6kDDIW2/w9qOWKg+NU/5F8wYRWCrONad0/UKkloNSmmyN/wX4rtpbVA==}
     dependencies:
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
       '@types/send': 0.17.1
@@ -933,7 +933,7 @@ packages:
   /@types/git-raw-commits@2.0.1:
     resolution: {integrity: sha512-vE2lbXxqJ0AqMDoP4N6d+WVfbcBla9+z8IL6e+37JNQIwYZCYY0z3J7hdpY8D/VGwFZ0yIYQLcqk8eCnfXsaEg==}
     dependencies:
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
     dev: true
 
   /@types/mime@1.3.2:
@@ -948,8 +948,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: true
 
-  /@types/node@20.17.1:
-    resolution: {integrity: sha512-j2VlPv1NnwPJbaCNv69FO/1z4lId0QmGvpT41YxitRtWlg96g/j8qcv2RKsLKe2F6OJgyXhupN1Xo17b2m139Q==}
+  /@types/node@20.17.6:
+    resolution: {integrity: sha512-VEI7OdvK2wP7XHnsuXbAJnEpEkF6NjSN45QJlL4VGqZSXsnicpesdTWsg9RISeSdYd3yeRj/y3k5KGjUXYnFwQ==}
     dependencies:
       undici-types: 6.19.6
 
@@ -973,14 +973,14 @@ packages:
     resolution: {integrity: sha512-Cwo8LE/0rnvX7kIIa3QHCkcuF21c05Ayb0ZfxPiv0W8VRiZiNW/WuRupHKpqqGVGf7SUA44QSOUKaEd9lIrd/Q==}
     dependencies:
       '@types/mime': 1.3.2
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
     dev: true
 
   /@types/serve-static@1.15.1:
     resolution: {integrity: sha512-NUo5XNiAdULrJENtJXZZ3fHtfMolzZwczzBbnAeBbqBwG+LaG6YaJtuwzwGSQZ2wsCrxjEhNNjAkKigy3n8teQ==}
     dependencies:
       '@types/mime': 3.0.1
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
     dev: true
 
   /@types/yargs-parser@21.0.0:
@@ -997,7 +997,7 @@ packages:
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
     requiresBuild: true
     dependencies:
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
     dev: false
     optional: true
 
@@ -1688,7 +1688,7 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.17.1)(cosmiconfig@9.0.0)(typescript@5.6.3):
+  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.17.6)(cosmiconfig@9.0.0)(typescript@5.6.3):
     resolution: {integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==}
     engines: {node: '>=v16'}
     peerDependencies:
@@ -1696,7 +1696,7 @@ packages:
       cosmiconfig: '>=8.2'
       typescript: '>=4'
     dependencies:
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
       cosmiconfig: 9.0.0(typescript@5.6.3)
       jiti: 1.21.6
       typescript: 5.6.3
@@ -2732,8 +2732,8 @@ packages:
     hasBin: true
     dev: true
 
-  /jiti@2.3.3:
-    resolution: {integrity: sha512-EX4oNDwcXSivPrw2qKH2LB5PoFxEvgtv2JgwW0bU858HoLQ+kutSvjLMUqBd0PeJYEinLWhoI9Ol0eYMqj/wNQ==}
+  /jiti@2.4.0:
+    resolution: {integrity: sha512-H5UpaUI+aHOqZXlYOaFP/8AzKsg+guWu+Pr3Y8i7+Y3zr1aXAvCvTAQ1RxSc6oVD8R8c7brgNtTVP91E7upH/g==}
     hasBin: true
     dev: true
 
@@ -2775,8 +2775,8 @@ packages:
     engines: {'0': node >= 0.2.0}
     dev: true
 
-  /knip@5.34.1(@types/node@20.17.1)(typescript@5.6.3):
-    resolution: {integrity: sha512-MwQjEWBxsi7MnTL3JpLJwYRhqD1262Fv+TylMYDyZRAVJMmEs4y0qie5zv8VjU5DBSGoEs35Ssu7I/2klNOQgw==}
+  /knip@5.36.2(@types/node@20.17.6)(typescript@5.6.3):
+    resolution: {integrity: sha512-MudNTKBSqThAFAV29GuRPSKSebByZeQCFeNgXVRVSd+sXcubehTgQHTGqqiwlXGCt4WBP7vuVekp0ZehfZtHuw==}
     engines: {node: '>=18.6.0'}
     hasBin: true
     peerDependencies:
@@ -2785,14 +2785,14 @@ packages:
     dependencies:
       '@nodelib/fs.walk': 1.2.8
       '@snyk/github-codeowners': 1.1.0
-      '@types/node': 20.17.1
+      '@types/node': 20.17.6
       easy-table: 1.2.0
       enhanced-resolve: 5.17.1
       fast-glob: 3.3.2
-      jiti: 2.3.3
+      jiti: 2.4.0
       js-yaml: 4.1.0
       minimist: 1.2.8
-      picocolors: 1.0.1
+      picocolors: 1.1.1
       picomatch: 4.0.1
       pretty-ms: 9.0.0
       smol-toml: 1.3.0
@@ -3399,6 +3399,10 @@ packages:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
     dev: true
 
+  /picocolors@1.1.1:
+    resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
+    dev: true
+
   /picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
@@ -3494,15 +3498,15 @@ packages:
       '@puppeteer/browsers': 2.4.0
       eight-colors: 1.3.0
       gauge: 5.0.2
-      puppeteer-core: 23.6.0
+      puppeteer-core: 23.6.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
     dev: false
 
-  /puppeteer-core@23.6.0:
-    resolution: {integrity: sha512-se1bhgUpR9C529SgHGr/eyT92mYyQPAhA2S9pGtGrVG2xob9qE6Pbp7TlqiSPlnnY1lINqhn6/67EwkdzOmKqQ==}
+  /puppeteer-core@23.6.1:
+    resolution: {integrity: sha512-DoNLAzQfGklPauEn33N4h9cM9GubJSINEn+AUMwAXwW159Y9JLk5y34Jsbv4c7kG8P0puOYWV9leu2siMZ/QpQ==}
     engines: {node: '>=18'}
     dependencies:
       '@puppeteer/browsers': 2.4.0
