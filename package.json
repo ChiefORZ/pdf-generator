@@ -29,7 +29,7 @@
     "locate-chrome": "^0.1.1",
     "pdf-lib": "^1.17.1",
     "puppeteer-chromium-resolver": "^23.0.0",
-    "puppeteer-core": "^23.6.1",
+    "puppeteer-core": "^23.7.1",
     "puppeteer-report": "^3.1.0",
     "typescript": "^5.6.3",
     "yargs": "^17.7.2"
@@ -48,7 +48,7 @@
     "conventional-changelog": "^6.0.0",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "husky": "^9.1.6",
-    "knip": "^5.36.2",
+    "knip": "^5.36.5",
     "lint-staged": "^15.2.10",
     "npm-run-all2": "^7.0.1",
     "release-it": "^17.10.0",
