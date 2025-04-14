@@ -48,13 +48,13 @@
     "conventional-changelog": "^6.0.0",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "husky": "^9.1.7",
-    "knip": "^5.47.0",
-    "lint-staged": "^15.5.0",
+    "knip": "^5.50.2",
+    "lint-staged": "^15.5.1",
     "npm-run-all2": "^7.0.2",
     "release-it": "^17.11.0",
     "semver": "^7.7.1",
     "tsx": "^4.19.3",
-    "wireit": "^0.14.11"
+    "wireit": "^0.14.12"
   },
   "packageManager": "pnpm@8.12.0",
   "engines": {
