@@ -80,8 +80,8 @@ devDependencies:
     specifier: ^9.1.7
     version: 9.1.7
   knip:
-    specifier: ^5.60.2
-    version: 5.60.2(@types/node@20.19.0)(typescript@5.8.3)
+    specifier: ^5.61.0
+    version: 5.61.0(@types/node@20.19.0)(typescript@5.8.3)
   lint-staged:
     specifier: ^15.5.2
     version: 15.5.2
@@ -95,8 +95,8 @@ devDependencies:
     specifier: ^7.7.2
     version: 7.7.2
   tsx:
-    specifier: ^4.19.4
-    version: 4.19.4
+    specifier: ^4.20.3
+    version: 4.20.3
   wireit:
     specifier: ^0.14.12
     version: 0.14.12
@@ -2909,8 +2909,8 @@ packages:
     engines: {'0': node >= 0.2.0}
     dev: true
 
-  /knip@5.60.2(@types/node@20.19.0)(typescript@5.8.3):
-    resolution: {integrity: sha512-TsYqEsoL3802RmhGL5MN7RLI6/03kocMYx/4BpMmwo3dSwEJxmzV7HqRxMVZr6c1llbd25+MqjgA86bv1IwsPA==}
+  /knip@5.61.0(@types/node@20.19.0)(typescript@5.8.3):
+    resolution: {integrity: sha512-g4zwSPUoSCWXWTHshNgtsiuM90jnLpZyBZ6J7BQaydfoOjclgh4NfrD7BL+TjChgDbeYg5bEQcERKK/vdJlpmA==}
     engines: {node: '>=18.18.0'}
     hasBin: true
     peerDependencies:
@@ -4232,8 +4232,8 @@ packages:
   /tslib@2.6.0:
     resolution: {integrity: sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA==}
 
-  /tsx@4.19.4:
-    resolution: {integrity: sha512-gK5GVzDkJK1SI1zwHf32Mqxf2tSJkNx+eYcNly5+nHvWqXUJYUkWBQtKauoESz3ymezAI++ZwT855x5p5eop+Q==}
+  /tsx@4.20.3:
+    resolution: {integrity: sha512-qjbnuR9Tr+FJOMBqJCW5ehvIo/buZq7vH7qD7JziU98h6l3qGy0a/yPFjwO+y0/T7GFpNgNAvEcPPVfyT8rrPQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
