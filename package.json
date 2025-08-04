@@ -31,7 +31,7 @@
     "puppeteer-chromium-resolver": "^23.0.0",
     "puppeteer-core": "^23.11.1",
     "puppeteer-report": "^3.1.0",
-    "typescript": "^5.8.3",
+    "typescript": "^5.9.2",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
