@@ -1,4 +1,27 @@
+# Changelog
 
+## [1.7.0](///compare/1.6.0...1.7.0) (2025-11-18)
+
+### Features
+
+* adopt eslint flat config e61e4c3
+* use ultracite as linter and formatter and update dependencies 1bb0575
+
+### Bug Fixes
+
+* add missing devDep thanks to knip 237e502
+* **deps:** update dependency typescript to ^5.9.2 ([#158](undefined/undefined/undefined/issues/158)) 0f86b87
+* **deps:** update external-non-major ([#128](undefined/undefined/undefined/issues/128)) 9589004
+* **deps:** update external-non-major ([#129](undefined/undefined/undefined/issues/129)) 7f89a16
+* **deps:** update external-non-major ([#130](undefined/undefined/undefined/issues/130)) 157352b
+* **deps:** update external-non-major ([#132](undefined/undefined/undefined/issues/132)) 2a6644f
+* **deps:** update external-non-major ([#133](undefined/undefined/undefined/issues/133)) 10c96af
+* **deps:** update external-non-major ([#139](undefined/undefined/undefined/issues/139)) bbfe285
+* **deps:** update external-non-major ([#144](undefined/undefined/undefined/issues/144)) 6a11b82
+* **deps:** update external-non-major ([#150](undefined/undefined/undefined/issues/150)) c4a4d0f
+* **deps:** update external-non-major ([#162](undefined/undefined/undefined/issues/162)) 0485fb0
+* **deps:** update external-non-major ([#163](undefined/undefined/undefined/issues/163)) 45206f0
+* **deps:** update external-non-major ([#166](undefined/undefined/undefined/issues/166)) ff77346
 
 ## [1.6.0](https://github.com/ChiefORZ/pdf-generator/compare/1.5.0...1.6.0) (2023-11-14)
 
