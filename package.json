@@ -8,53 +8,47 @@
   "types": "dist/src/index.d.ts",
   "bin": "dist/bin/pdf-generator.js",
   "scripts": {
-    "biome:check": "wireit",
-    "biome:write": "wireit",
-    "build": "wireit",
-    "dev": "wireit",
-    "precommit": "wireit",
-    "prepare": "wireit",
-    "release": "wireit",
-    "test": "wireit",
-    "test:knip": "wireit"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "biome check --write"
+    "build": "tsc",
+    "dev": "node --import tsx --watch ./bin/pdf-generator",
+    "lint": "ultracite fix",
+    "lint:check": "ultracite check",
+    "release": "release-it",
+    "test:knip": "knip",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",
     "debug": "^4.4.3",
-    "express": "^4.21.2",
+    "express": "^5.1.0",
     "fast-glob": "^3.3.3",
+    "lefthook": "^2.0.4",
     "locate-chrome": "^0.1.1",
     "pdf-lib": "^1.17.1",
-    "puppeteer-chromium-resolver": "^23.0.0",
-    "puppeteer-core": "^23.11.1",
+    "puppeteer-chromium-resolver": "^24.0.3",
+    "puppeteer-core": "^24.30.0",
     "puppeteer-report": "^3.2.0",
     "typescript": "^5.9.3",
-    "yargs": "^17.7.2"
+    "yargs": "^18.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@release-it/conventional-changelog": "^9.0.4",
-    "@types/conventional-changelog": "^3.1.5",
+    "@biomejs/biome": "^2.3.6",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@release-it/conventional-changelog": "^10.0.2",
+    "@types/conventional-changelog": "^6.0.1",
     "@types/debug": "^4.1.12",
     "@types/express": "^5.0.5",
-    "@types/node": "^20.19.25",
+    "@types/node": "^24.10.1",
     "@types/semver": "^7.7.1",
     "@types/yargs": "^17.0.35",
-    "conventional-changelog": "^6.0.0",
-    "conventional-changelog-conventionalcommits": "^8.0.0",
-    "husky": "^9.1.7",
+    "conventional-changelog": "^7.1.1",
+    "conventional-changelog-conventionalcommits": "^9.1.0",
     "knip": "^5.69.1",
-    "lint-staged": "^15.5.2",
-    "npm-run-all2": "^7.0.2",
-    "release-it": "^17.11.0",
+    "release-it": "^19.0.6",
     "semver": "^7.7.3",
     "tsx": "^4.20.6",
-    "wireit": "^0.14.12"
+    "turbo": "^2.6.1",
+    "ultracite": "^6.3.4"
   },
   "packageManager": "pnpm@8.12.0",
   "engines": {
@@ -63,49 +57,5 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "wireit": {
-    "build": {
-      "command": "tsc",
-      "files": ["src/**/*", "tsconfig.json"],
-      "clean": true,
-      "output": ["dist/**"]
-    },
-    "dev": {
-      "command": "node --import tsx --watch ./bin/pdf-generator",
-      "files": ["src/**/*", "bin/pdf-generator"],
-      "service": true
-    },
-    "biome:check": {
-      "command": "biome check ./src",
-      "files": ["src/**/*.{js,jsx,ts,tsx}"],
-      "output": []
-    },
-    "biome:write": {
-      "command": "biome check --write ./src"
-    },
-    "precommit": {
-      "command": "lint-staged",
-      "files": ["src/**/*"],
-      "output": []
-    },
-    "prepare": {
-      "command": "husky install"
-    },
-    "release": {
-      "command": "release-it",
-      "files": ["src/**/*", "package.json"],
-      "output": []
-    },
-    "test": {
-      "command": "npm-run-all test:*",
-      "files": ["src/**/*"],
-      "output": []
-    },
-    "test:knip": {
-      "command": "knip",
-      "files": ["src/**/*"],
-      "output": []
-    }
   }
 }

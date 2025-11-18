@@ -1,12 +1,53 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "files": {
-    "ignoreUnknown": true
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              {
+                "source": [":BUN:", ":NODE:"],
+                "type": true
+              },
+              [":BUN:", ":NODE:"],
+              ":BLANK_LINE:",
+              {
+                "source": [":PACKAGE:", ":PACKAGE_WITH_PROTOCOL:"],
+                "type": true
+              },
+              [":PACKAGE:", ":PACKAGE_WITH_PROTOCOL:"],
+              ":BLANK_LINE:",
+              {
+                "source": ":ALIAS:",
+                "type": true
+              },
+              ":ALIAS:",
+              ":BLANK_LINE:",
+              {
+                "source": ":URL:",
+                "type": true
+              },
+              ":URL:",
+              ":BLANK_LINE:",
+              {
+                "source": ":PATH:",
+                "type": true
+              },
+              ":PATH:"
+            ]
+          }
+        },
+        "useSortedAttributes": "on",
+        "useSortedKeys": "on",
+        "useSortedProperties": "on"
+      }
+    },
+    "includes": ["**", "!package.json"]
   },
+  "extends": ["ultracite/core", "ultracite/next"],
   "formatter": {
-    "enabled": true,
-    "formatWithErrors": true,
-    "ignore": ["**/.next", "**/.wireit", "**/build", "**/dist", "**/node_modules"],
     "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 100
@@ -16,27 +57,21 @@
       "arrowParentheses": "always",
       "enabled": true,
       "lineEnding": "lf",
-      "quoteStyle": "single",
+      "quoteStyle": "double",
       "trailingCommas": "all"
+    }
+  },
+  "linter": {
+    "rules": {
+      "style": {
+        "useConsistentTypeDefinitions": "off",
+        "useFilenamingConvention": "off"
+      }
     }
   },
   "json": {
     "formatter": {
       "enabled": true
     }
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
-    }
-  },
-  "organizeImports": {
-    "enabled": true
-  },
-  "vcs": {
-    "clientKind": "git",
-    "enabled": true,
-    "useIgnoreFile": true
   }
 }

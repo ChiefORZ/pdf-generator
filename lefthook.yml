@@ -1,0 +1,25 @@
+commit-msg:
+  commands:
+    convention-message:
+      run: echo "$COMMIT_MESSAGE" | pnpm exec commitlint --verbose --edit {1}
+
+pre-commit:
+  jobs:
+    - run: pnpm turbo lint
+      glob: 
+        - "*.js"
+        - "*.jsx"
+        - "*.ts"
+        - "*.tsx"
+        - "*.json"
+        - "*.jsonc"
+        - "*.css"
+      stage_fixed: true
+  parallel: true
+  commands:
+    test:
+      glob: '*.{ts,tsx} | package.json'
+      run: pnpm turbo test
+    type-check:
+      glob: '*.{ts,tsx}'
+      run: pnpm turbo typecheck

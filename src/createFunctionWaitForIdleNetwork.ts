@@ -1,7 +1,8 @@
-import EventEmitter from 'node:events';
-import Debug from 'debug';
+import EventEmitter from "node:events";
 
-const debug = Debug('pdf-generator:createFunctionWaitForIdleNetwork');
+import Debug from "debug";
+
+const debug = Debug("pdf-generator:createFunctionWaitForIdleNetwork");
 
 export function createFunctionWaitForIdleNetwork(page) {
   class Emitter extends EventEmitter {}
@@ -11,24 +12,24 @@ export function createFunctionWaitForIdleNetwork(page) {
 
   function pushRequest(request) {
     pendingRequestIds.add(request._requestId);
-    emitter.emit('active');
+    emitter.emit("active");
   }
 
   function popRequest(request) {
     pendingRequestIds.delete(request._requestId);
     if (pendingRequestIds.size === 0) {
-      emitter.emit('idle');
+      emitter.emit("idle");
     }
   }
 
   function emitFailed(request) {
     pendingRequestIds.delete(request._requestId);
-    emitter.emit('fail');
+    emitter.emit("fail");
   }
 
-  page.on('request', pushRequest);
-  page.on('requestfinished', popRequest);
-  page.on('requestfailed', emitFailed);
+  page.on("request", pushRequest);
+  page.on("requestfinished", popRequest);
+  page.on("requestfailed", emitFailed);
 
   /**
    * Return a promise that will resolve when the network is idle.
@@ -39,14 +40,14 @@ export function createFunctionWaitForIdleNetwork(page) {
    * @param failTimeout
    *   The maximum amount of time to wait for the network to become idle before rejecting.
    */
-  async function waitForIdleNetwork(idleTimeout = 1000, failTimeout = 30 * 1000) {
-    debug('idleTimeout ', idleTimeout);
-    debug('failTimeout ', failTimeout);
+  function waitForIdleNetwork(idleTimeout = 1000, failTimeout = 30 * 1000) {
+    debug("idleTimeout ", idleTimeout);
+    debug("failTimeout ", failTimeout);
     let failTimer: NodeJS.Timeout;
     let idleTimer: NodeJS.Timeout;
 
     return new Promise<void>((resolve, reject) => {
-      debug('waiting for idle network...');
+      debug("waiting for idle network...");
       function fail() {
         reject(
           new Error(
@@ -79,19 +80,19 @@ export function createFunctionWaitForIdleNetwork(page) {
       // Handle edge case where neither active nor idle is emitted during the lifetime of this promise.
       setTimeout(() => {
         if (pendingRequestIds.size === 0) {
-          debug('after initialization, there are still no network requests');
+          debug("after initialization, there are still no network requests");
           idleTimer = setTimeout(succeed, idleTimeout);
         }
       }, puppeteerWaitForTimeout);
 
       // Play a game of whack-a-mole with the idle and active events.
-      emitter.on('idle', () => {
+      emitter.on("idle", () => {
         idleTimer = setTimeout(succeed, idleTimeout);
       });
-      emitter.on('active', () => {
+      emitter.on("active", () => {
         clearTimeout(idleTimer);
       });
-      emitter.on('failed', failed);
+      emitter.on("failed", failed);
     });
   }
 

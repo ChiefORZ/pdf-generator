@@ -9,5 +9,5 @@
     "conventional-changelog-conventionalcommits",
     "semver"
   ],
-  "project": ["src/**/*.ts", "src/**/*.tsx"]
+  "project": ["bin/**/*.ts", "src/**/*.ts"]
 }

@@ -134,3 +134,6 @@ dist
 #wireit
 .wireit
 .eslintcache
+
+# turbo
+.turbo

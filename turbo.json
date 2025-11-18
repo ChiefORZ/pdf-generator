@@ -1,0 +1,28 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "inputs": ["src/**", "bin/**", "package.json"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "inputs": ["src/**", "bin/**", "package.json"],
+      "outputs": []
+    },
+    "typecheck": {
+      "inputs": ["src/**", "bin/**", "package.json"],
+      "outputs": []
+    },
+    "test": {
+      "dependsOn": ["test:knip"]
+    },
+    "test:knip": {
+      "inputs": ["src/**", "bin/**", "package.json"],
+      "outputs": []
+    }
+  }
+}
