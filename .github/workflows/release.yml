@@ -55,9 +55,6 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
 
-      # Set up GitHub Actions caching for Wireit.
-      - uses: google/wireit@setup-github-actions-caching/v2
-
       - name: Build
         run: pnpm run build
 
@@ -65,7 +62,7 @@ jobs:
         run: git reset --hard
 
       - name: Release
-        run: yarn release
+        run: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
