@@ -1,0 +1,6 @@
+ignoredBuiltDependencies:
+  - esbuild
+
+onlyBuiltDependencies:
+  - lefthook
+  - puppeteer-chromium-resolver
