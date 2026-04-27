@@ -25,14 +25,14 @@
     "locate-chrome": "^0.1.1",
     "pdf-lib": "^1.17.1",
     "puppeteer-chromium-resolver": "^24.0.3",
-    "puppeteer-core": "^24.41.0",
+    "puppeteer-core": "^24.42.0",
     "puppeteer-report": "^3.2.0",
     "typescript": "^5.9.3",
     "yargs": "^18.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.12",
-    "@commitlint/cli": "^20.5.0",
+    "@biomejs/biome": "^2.4.13",
+    "@commitlint/cli": "^20.5.2",
     "@commitlint/config-conventional": "^20.5.0",
     "@release-it/conventional-changelog": "^10.0.6",
     "@types/conventional-changelog": "^6.0.1",
